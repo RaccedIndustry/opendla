@@ -5,6 +5,7 @@
     "issue_date": "2026-10-22",
     "quote_due_date": "2026-10-29",
     "purchase_request": "7018470621",
+    "dpas_rating": null,
     "small_business_set_aside": false,
     "quote_validity_days": 90
   },
@@ -72,7 +73,7 @@
         "(Ref. T0795 - May 17, 2006)",
         "FIVE (5) FIRST ARTICLE SAMPLES ARE REQUIRED. FIRST ARTICLE TESTING SHALL BE PERFORMED AND THE CONTRACTOR WILL BE NOTIFIED IN WRITING WITHIN THIRTY (30) CALENDAR DAYS AFTER CONTRACTING OFFICER'S RECEIPT OF FIRST ARTICLE SAMPLES.",
         "DLA issues this document using the DoD authorized unit of issue, please refer to the following URL to determine the corresponding ANSI X12 unit of issue.",
-        "https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fwww.dla.mil%2FPortals%2F104%2FDocuments%2FDLMS% 2FeApplications%2FLogDataAdmin%2FUnit_of_Issue_and_Purchase_Unit.xlsx&wdOrigin=BROWSELINK"
+        "https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fwww.dla.mil%2FPortals%2F104%2FDocuments%2FDLMS%2FeApplications%2FLogDataAdmin%2FUnit_of_Issue_and_Purchase_Unit.xlsx&wdOrigin=BROWSELINK"
       ],
       "clins": [
         {
@@ -184,7 +185,7 @@
     "Pursuant to FAR clause 52.222-54 vendors are required to enroll in the E-Verify program within thirty days after the date of a contract award and comply with all terms of the clause. In addition, vendors are required to provide evidence of their enrollment in the E-verify program to the contracting officer within 30 days after the date of a contract award.",
     "*VIM-ASAP is the ONLY authorized method to electronically process requests for payment to WAWF-RA.",
     "*YOU MUST REGISTER IN VIM TO INVOICE ELECTRONICALLY",
-    "*If you are not registered to access VIM please go to vim.dla.mil and contact the VIM helpdesk desk at VIMSUPPORT@dla. mil",
+    "*If you are not registered to access VIM please go to vim.dla.mil and contact the VIM helpdesk desk at VIMSUPPORT@dla.mil",
     "*In order to be considered for this award bidder must provide an end product manufactured by a vendor certified by The Institute of Heraldry (TIOH) and listed on the The Institute of Heraldry certified manufacturer list. The current list is found here: http://www.tioh.hqda.pentagon.mil/Catalog/VendorList.aspx.",
     "*Please following directions listed here http://www.tioh.hqda.pentagon.mil/Content/docs/Contact-Us_Final.pdf to inquire about becoming a TIOH Certified Manufacturer."
   ],
@@ -670,7 +671,7 @@
     {
       "section": "K",
       "number": "252.225-7059",
-      "title": "PROHIBITION ON CERTAIN PROCUREMENTS FROM THE XINJIANG UYGHUR AUTONOMOUS REGION --REPRESENTATION",
+      "title": "PROHIBITION ON CERTAIN PROCUREMENTS FROM THE XINJIANG UYGHUR AUTONOMOUS REGION -- REPRESENTATION",
       "date": "JUN 2023"
     },
     {
@@ -696,7 +697,7 @@
     {
       "section": "K",
       "number": "252.204-7017",
-      "title": "PROHIBITION ON THE ACQUISITON OF COVERED DEFENSE TELECOMMUNICATIONS EQUIPMENT OR SERVICES --REPRESENTATION",
+      "title": "PROHIBITION ON THE ACQUISITON OF COVERED DEFENSE TELECOMMUNICATIONS EQUIPMENT OR SERVICES -- REPRESENTATION",
       "date": "MAY 2021"
     },
     {

@@ -9,7 +9,8 @@ const pad = n => String(n).padStart(2, '0');
 const ymd = s => { const [y, m, d] = s.split(' '); return `${y}-${pad(MON[m])}-${d}`; }; // "2026 OCT 22"
 const mdy = s => { const [m, d, y] = s.split('/'); return `${y}-${pad(m)}-${pad(d)}`; };  // "9/13/1988"
 const int = m => (m ? +m[1] : null);
-const unwrap = s => s.replace(/\s*\n\s*/g, ' ').trim();
+// Joins wrapped lines with a space, except a URL/email split at the margin ("VIMSUPPORT@dla." + "mil").
+const unwrap = s => s.replace(/(\S*(?:@|:\/\/|%)\S*[.%\/])\n(?=[a-z0-9])/g, '$1').replace(/\s*\n\s*/g, ' ').trim();
 const paras = s => s.split(/\n{2,}/).map(p => p.trim()).filter(Boolean);
 const must = (ok, what) => { if (!ok) throw new Error(`could not parse ${what}`); };
 
@@ -101,7 +102,7 @@ function clauses(section, text) {
   for (let i = 0; i < lines.length; i++) {
     if (!CLAUSE.test(lines[i])) continue;
     let h = lines[i];
-    for (let k = 0; k < 2 && !/\([A-Z]{3} \d{4}\)/.test(h) && lines[i + 1]; k++) h += (h.endsWith('-') ? '' : ' ') + lines[++i];
+    for (let k = 0; k < 2 && !/\([A-Z]{3} \d{4}\)/.test(h) && lines[i + 1]; k++) h += (/\w-$/.test(h) ? '' : ' ') + lines[++i];
     if (/^(FAR|DFARS)$/.test(lines[i + 1] ?? '')) i++;
     h = h.replace(/\s+(FAR|DFARS)$/, '');
     const number = h.split(' ')[0];
@@ -130,7 +131,7 @@ function run([path]) {
   const number = before('1\\. REQUEST NO\\.'), issued = before('2\\. DATE ISSUED');
   const [firstDate, due] = p1.match(/^\d{4} [A-Z]{3} \d{2}$/gm) ?? []; // block 2, then block 10
   must(/^[A-Z0-9]{6}-\d{2}-[A-Z]-\d{4}$/.test(number) && firstDate === issued && due, 'page 1 header');
-  const office = p1.match(/^3\. REQUISITION.*\n([\s\S]*?)\nBuyer: (.+?) (\S+) Tel: (\S+)\nEmail: (\S+)/m);
+  const office = p1.match(/RATING\n([\s\S]*?)\nBuyer: (.+?) (\S+) Tel: (.+)\nEmail: (\S+)/); // block 5 follows block 4
   must(office, 'issuing office / buyer');
 
   // Pages 2+: front-matter notes, then sections B..M (a section continued on later pages is merged).
@@ -181,6 +182,7 @@ function run([path]) {
       issue_date: ymd(issued),
       quote_due_date: ymd(due),
       purchase_request: before('3\\. REQUISITION') ?? null,
+      dpas_rating: before('RATING$') ?? null, // e.g. "DO-C9"; printed on its own line before the label when set
       small_business_set_aside: setAside(page1),
       quote_validity_days: int(p1.match(/valid for (\d+) days/)),
     },
