@@ -5,6 +5,7 @@ export type Archive = {
 	date: string;
 	fileUrl: string;
 	state: 'pending' | 'downloaded' | 'parsed';
+	demo: boolean;
 };
 
 /** GET JSON inside a load function: 401 goes to the login page, other failures to the error page. */

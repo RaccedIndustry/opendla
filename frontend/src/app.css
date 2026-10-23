@@ -142,6 +142,17 @@ td select {
 	min-height: 1.875rem;
 }
 
+/* Tags, e.g. "demo" on sample data */
+mark {
+	padding: 0.0625rem 0.375rem;
+	border-radius: var(--radius);
+	background: color-mix(in srgb, var(--accent) 12%, transparent);
+	color: var(--accent);
+	font-size: 0.75rem;
+	font-weight: 600;
+	vertical-align: middle;
+}
+
 /* Tabs */
 nav {
 	display: flex;

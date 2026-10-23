@@ -38,7 +38,7 @@ export class ArchivesController {
   async add(@Body('date') date: unknown) {
     if (typeof date !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(date))
       throw new BadRequestException('date must be YYYY-MM-DD');
-    if (await this.archives.existsBy({ date }))
+    if (await this.archives.existsBy({ date, demo: false }))
       throw new ConflictException(`${date} is already in the list`);
     const listed = await this.ingest.listed();
     const found = listed.find((a) => a.date === date);
@@ -50,6 +50,8 @@ export class ArchivesController {
         `DIBBS has no archive for ${date}.${range}`,
       );
     }
+    // Dates are unique, so the real day replaces its demo row (and the demo RFQs).
+    await this.archives.delete({ date, demo: true });
     return this.archives.save(found);
   }
 

@@ -5,7 +5,7 @@ import { promisify } from 'node:util';
 import { Injectable, Logger } from '@nestjs/common';
 import { Cron, CronExpression } from '@nestjs/schedule';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Not, Repository } from 'typeorm';
+import { In, Not, Repository } from 'typeorm';
 import { Archive } from './archive.entity.js';
 import { dibbsGet, listArchives, RFQ_DATES_URL } from './dibbs.js';
 
@@ -37,7 +37,7 @@ export class IngestService {
   private async ingest() {
     await this.discover();
     const pending = await this.archives.find({
-      where: { state: 'pending' },
+      where: { state: 'pending', demo: false },
       order: { date: 'ASC' },
     });
     for (const archive of pending) {
@@ -64,9 +64,10 @@ export class IngestService {
     const listed = await this.listed();
     if (!listed.length)
       this.logger.warn('No archives found on the DIBBS dates page');
-    // Pending rows don't count: a hand-added future date must not hide the days before it.
+    // Pending and demo rows don't count: a hand-added future date must not hide the days
+    // before it, and the demo must not pass for a download.
     const [newest] = await this.archives.find({
-      where: { state: Not('pending') },
+      where: { state: Not('pending'), demo: false },
       order: { date: 'DESC' },
       take: 1,
     });
@@ -75,6 +76,11 @@ export class IngestService {
       ? listed.filter((a) => a.date > newest.date)
       : listed.slice(0, 1);
     if (fresh.length) {
+      // Dates are unique, so a real day replaces its demo row (and the demo RFQs).
+      await this.archives.delete({
+        demo: true,
+        date: In(fresh.map((a) => a.date)),
+      });
       await this.archives
         .createQueryBuilder()
         .insert()

@@ -17,8 +17,10 @@ type Rfq = {
 
 export const load: PageLoad = async ({ fetch, url }) => {
 	const archives = await getJson<Archive[]>(fetch, '/api/archives');
-	// The newest archive unless the URL picks one.
-	const archive = Number(url.searchParams.get('archive')) || archives[0]?.id;
+	// The newest parsed archive (parsed ones have the RFQs) unless the URL picks one.
+	const archive =
+		Number(url.searchParams.get('archive')) ||
+		(archives.find((a) => a.state === 'parsed') ?? archives[0])?.id;
 	const q = url.searchParams.get('q') ?? '';
 	const rfqs = archive
 		? await getJson<Rfq[]>(fetch, `/api/archives/${archive}/rfqs?${new URLSearchParams({ q })}`)

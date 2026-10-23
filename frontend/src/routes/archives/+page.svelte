@@ -51,7 +51,8 @@
 <h1>Archives</h1>
 <p>
 	One row per DIBBS daily archive. Click a date to see its RFQs, add a day the job missed, or set a
-	row back to pending to download it again.
+	row back to pending to download it again. Rows tagged demo hold sample RFQs: the job skips them,
+	and adding the real day replaces them.
 </p>
 {#if error}
 	<p role="alert">{error}</p>
@@ -76,10 +77,12 @@
 	{/snippet}
 	{#snippet cell(archive, key, text)}
 		{#if key === 'date'}<a href="/rfqs?archive={archive.id}">{text}</a>
+			{#if archive.demo}<mark>demo</mark>{/if}
 		{:else if key === 'state'}
 			<select
 				aria-label="State of {archive.date}"
 				value={archive.state}
+				disabled={archive.demo}
 				onchange={(e) => setState(archive.id, e.currentTarget, archive.state)}
 			>
 				{#each STATES as s (s)}<option>{s}</option>{/each}

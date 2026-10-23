@@ -5,6 +5,7 @@
 	let { data }: PageProps = $props();
 	let dialog = $state<HTMLDialogElement>();
 	let detail = $state<{ number: string; data: unknown }>();
+	const demo = $derived(data.archives.find((a) => a.id === data.archive)?.demo);
 
 	async function show(id: number) {
 		const res = await fetch(`/api/rfqs/${id}`);
@@ -14,7 +15,7 @@
 	}
 </script>
 
-<h1>RFQs</h1>
+<h1>RFQs {#if demo}<mark>demo</mark>{/if}</h1>
 
 {#if data.archives.length === 0}
 	<p>No archives yet. The daily job adds one per DIBBS post date.</p>
@@ -44,7 +45,9 @@
 					value={data.archive}
 					onchange={(e) => e.currentTarget.form?.requestSubmit()}
 				>
-					{#each data.archives as a (a.id)}<option value={a.id}>{a.date} · {a.state}</option>{/each}
+					{#each data.archives as a (a.id)}
+						<option value={a.id}>{a.date} · {a.state}{a.demo ? ' · demo' : ''}</option>
+					{/each}
 				</select>
 				<input
 					type="search"

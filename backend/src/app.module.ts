@@ -12,6 +12,7 @@ import { AuthGuard } from './auth/auth.guard.js';
 import { AuthService } from './auth/auth.service.js';
 import { User } from './auth/user.entity.js';
 import { UsersController } from './auth/users.controller.js';
+import { DemoService } from './demo.service.js';
 import { Archive } from './ingest/archive.entity.js';
 import { ArchivesController } from './ingest/archives.controller.js';
 import { IngestService } from './ingest/ingest.service.js';
@@ -52,6 +53,7 @@ function jwtSecret() {
     AppService,
     IngestService,
     AuthService,
+    DemoService,
     // Every route needs a login unless marked @Public().
     { provide: APP_GUARD, useClass: AuthGuard },
   ],

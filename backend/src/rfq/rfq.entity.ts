@@ -21,6 +21,7 @@ export type RfqJson = {
   issuing_office?: { lines?: string[] } | null;
   buyer?: { name?: string | null } | null;
   items?: {
+    description?: string | null;
     clins?: {
       nsn?: string | null;
       nomenclature?: string | null;
@@ -85,7 +86,8 @@ export class Rfq {
   data: RfqJson;
 
   static from(archiveId: number, data: RfqJson) {
-    const clin = data.items?.[0]?.clins?.[0];
+    const first = data.items?.[0];
+    const clin = first?.clins?.[0];
     return Object.assign(new Rfq(), {
       archiveId,
       number: data.solicitation.number,
@@ -94,7 +96,8 @@ export class Rfq {
       office: data.issuing_office?.lines?.[0] ?? null,
       buyer: data.buyer?.name ?? null,
       nsn: clin?.nsn ?? null,
-      item: clin?.nomenclature ?? null,
+      // T and U RFQs leave the CLIN's nomenclature empty and name the item in its description.
+      item: clin?.nomenclature ?? first?.description ?? null,
       quantity: clin?.quantity ?? null,
       unit: clin?.unit ?? null,
       fob: clin?.fob ?? null,

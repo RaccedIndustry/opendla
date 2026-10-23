@@ -19,4 +19,8 @@ export class Archive {
     default: 'pending',
   })
   state: 'pending' | 'downloaded' | 'parsed';
+
+  /** Sample data from demo.service.ts. The job never picks it up, and a real archive for the same day replaces it. */
+  @Column({ default: false })
+  demo: boolean;
 }
