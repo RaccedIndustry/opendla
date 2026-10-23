@@ -10,4 +10,4 @@ npm run build   # backend/dist and frontend/build
 
 - Login: `admin` / `admin`, seeded on first start. The session is an HttpOnly JWT cookie signed with `backend/data/jwt.secret` (auto-generated). Every API route needs it unless marked `@Public()`.
 - Database: `backend/data/rfqcrm.sqlite`, created on first start. The schema auto-syncs from entities.
-- Daily ingest cron: `backend/src/ingest/ingest.service.ts` (fetch → unzip with fflate → parse → save).
+- Daily ingest cron (03:00 New York time): `backend/src/ingest/ingest.service.ts`. Reads the DIBBS RFQ dates page, downloads each new `ca{yymmdd}.zip`, unpacks its PDFs into `backend/data/archive/ca{yymmdd}/` and deletes the zip. Progress per file (`pending` → `downloaded` → `parsed`) is in the `archive` table; parsing isn't built yet. Needs `unzip` on PATH (built into macOS; `apt install unzip` on Debian/Ubuntu).

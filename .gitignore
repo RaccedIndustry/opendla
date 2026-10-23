@@ -4,5 +4,6 @@ coverage/
 *.tsbuildinfo
 *.sqlite*
 *.secret
+backend/data/
 .env
 .DS_Store

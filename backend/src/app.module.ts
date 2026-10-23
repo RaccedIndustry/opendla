@@ -11,6 +11,7 @@ import { AuthController } from './auth/auth.controller.js';
 import { AuthGuard } from './auth/auth.guard.js';
 import { AuthService } from './auth/auth.service.js';
 import { User } from './auth/user.entity.js';
+import { Archive } from './ingest/archive.entity.js';
 import { IngestService } from './ingest/ingest.service.js';
 
 // Kept next to the DB so restarts (incl. watch mode) don't log everyone out.
@@ -32,7 +33,7 @@ function jwtSecret() {
       // ponytail: schema auto-sync drops and re-adds renamed columns (data lost); switch to migrations once data matters
       synchronize: true,
     }),
-    TypeOrmModule.forFeature([User]),
+    TypeOrmModule.forFeature([User, Archive]),
     JwtModule.register({ secret: jwtSecret() }),
     ScheduleModule.forRoot(),
   ],

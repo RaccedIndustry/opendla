@@ -2,7 +2,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 /** One DIBBS daily archive (ca{yymmdd}.zip) and how far the ingest got with it. */
 @Entity()
-export class ArchiveFile {
+export class Archive {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -11,7 +11,7 @@ export class ArchiveFile {
   date: string;
 
   @Column()
-  url: string;
+  fileUrl: string;
 
   @Column({
     type: 'simple-enum',

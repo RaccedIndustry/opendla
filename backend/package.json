@@ -29,7 +29,6 @@
     "@nestjs/schedule": "^12.0.2",
     "@nestjs/typeorm": "^12.0.2",
     "better-sqlite3": "^12.11.1",
-    "fflate": "^0.8.3",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
     "typeorm": "^1.1.2"
