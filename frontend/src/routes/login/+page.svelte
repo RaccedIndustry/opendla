@@ -16,7 +16,10 @@
 </script>
 
 <form onsubmit={login}>
-	<h1>Sign in</h1>
+	<hgroup>
+		<p>RFQ CRM</p>
+		<h1>Sign in</h1>
+	</hgroup>
 	<label>
 		Username
 		<input name="username" autocomplete="username" required />
@@ -33,16 +36,36 @@
 	form {
 		display: grid;
 		gap: 1rem;
-		max-width: 20rem;
-		margin: 15vh auto;
-		padding: 0 1rem;
+		width: min(100%, 22rem);
+		margin: 12vh auto 0;
+		padding: 2rem;
+		border: 1px solid var(--border);
+		border-radius: 12px;
+		background: var(--surface);
+		box-shadow: 0 12px 32px -12px rgb(0 0 0 / 0.2);
+	}
+	hgroup p {
+		margin: 0 0 0.25rem;
+		color: var(--accent);
+		font-size: 0.75rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+	h1 {
+		margin: 0 0 0.5rem;
 	}
 	label {
 		display: grid;
-		gap: 0.25rem;
+		gap: 0.375rem;
+		font-weight: 500;
+	}
+	button {
+		min-height: 2.5rem;
 	}
 	[role='alert'] {
-		margin: 0;
-		color: #b00020;
+		padding: 0.5rem 0.75rem;
+		border-radius: var(--radius);
+		background: color-mix(in srgb, var(--danger) 10%, transparent);
 	}
 </style>

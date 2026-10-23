@@ -19,7 +19,7 @@ const derive = (password: string, salt: string) =>
     ),
   );
 
-async function hashPassword(password: string) {
+export async function hashPassword(password: string) {
   const salt = randomBytes(16).toString('hex');
   return `${salt}:${(await derive(password, salt)).toString('hex')}`;
 }

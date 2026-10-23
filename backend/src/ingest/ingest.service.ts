@@ -53,10 +53,15 @@ export class IngestService {
     // Next step: parse each downloaded day's PDFs, then state → 'parsed'.
   }
 
+  /** The archives DIBBS lists right now (about the last month), newest first. */
+  async listed() {
+    const page = await dibbsGet(RFQ_DATES_URL);
+    return listArchives(await page.text());
+  }
+
   /** Queue the archives DIBBS lists that are newer than the newest one we have. */
   private async discover() {
-    const page = await dibbsGet(RFQ_DATES_URL);
-    const listed = listArchives(await page.text());
+    const listed = await this.listed();
     if (!listed.length)
       this.logger.warn('No archives found on the DIBBS dates page');
     // Pending rows don't count: a hand-added future date must not hide the days before it.

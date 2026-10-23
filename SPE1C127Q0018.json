@@ -7,6 +7,7 @@
     "purchase_request": "7018470621",
     "dpas_rating": null,
     "small_business_set_aside": false,
+    "naics": null,
     "quote_validity_days": 90
   },
   "issuing_office": {
@@ -19,28 +20,41 @@
     ],
     "city": "PHILADELPHIA",
     "state": "PA",
-    "zip": "19111-5096"
+    "zip": "19111-5096",
+    "country": "USA"
   },
   "buyer": {
     "name": "LAUREN BRADLEY",
     "code": "DLB0138",
     "phone": "8565080993",
+    "fax": null,
     "email": "LAUREN.M.BRADLEY@DLA.MIL"
   },
   "items": [
     {
       "pgc": "20616",
+      "pr": null,
+      "nsn": null,
       "description": "INSIGNIA, RANK, OFFICER, JROTC; POLYESTER SERGE CADET COLONEL, LARGE BLACK, COLORASSN. SHADE 65018 BACKGROUND, SYNTHETIC METALLIC SILVER YARN CHEVRON, SIZE, SLIP-ON ATTACHMENT,EMBROIDERED ITEM, WORN ON SHOULDER LOOPS, TYPE V, SIZE 1, CLASS 1",
       "reference_docs": [
         {
-          "id": "DD 22571 B-3-122",
-          "date": "1988-09-13"
+          "type": null,
+          "cage": null,
+          "number": "DD 22571 B-3-122",
+          "revision": null,
+          "date": "1988-09-13",
+          "part_number": null
         },
         {
-          "id": "DD 22571B-3-122-6CARTOON",
-          "date": "1987-10-22"
+          "type": null,
+          "cage": null,
+          "number": "DD 22571B-3-122-6CARTOON",
+          "revision": null,
+          "date": "1987-10-22",
+          "part_number": null
         }
       ],
+      "approved_sources": [],
       "requirement_codes": [
         {
           "code": "RD003",
@@ -92,6 +106,7 @@
           "fob": "DESTINATION",
           "delivery_days_ado": 120,
           "rdd": "2027-05-28",
+          "need_ship_date": null,
           "pr": "7018470621",
           "prli": "0001",
           "packaging": {
@@ -133,7 +148,8 @@
               ],
               "city": "PHOENIX",
               "state": "AZ",
-              "zip": "85043"
+              "zip": "85043",
+              "country": "US"
             },
             "freight": {
               "dodaac": "UY8615",
@@ -145,14 +161,22 @@
               ],
               "city": "PHOENIX",
               "state": "AZ",
-              "zip": "85043"
-            }
-          }
+              "zip": "85043",
+              "country": "US"
+            },
+            "bulk_break_point": null,
+            "freight_forwarder": null,
+            "mark_for": null
+          },
+          "notes": [
+            "FOR TRANSPORTATION SEE DLAD DLAD PROC NOTE C19. FOR FIRST DESTINATION TRANSPORTATION SEE DLAD PROC NOTE C20 AND CONTRACT"
+          ]
         }
       ]
     }
   ],
   "first_article": {
+    "testing": "GOVERNMENT",
     "quantity": 5,
     "lot_item": "8455012713097",
     "due_days_after_award": 30,
