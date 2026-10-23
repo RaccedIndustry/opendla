@@ -3,5 +3,6 @@ dist/
 coverage/
 *.tsbuildinfo
 *.sqlite*
+*.secret
 .env
 .DS_Store

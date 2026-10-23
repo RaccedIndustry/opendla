@@ -16,11 +16,35 @@ describe('AppController (e2e)', () => {
     await app.init();
   });
 
-  it('/ (GET)', () => {
+  it('/ (GET) needs a login', () => {
+    return request(app.getHttpServer()).get('/').expect(401);
+  });
+
+  it('rejects a wrong password', () => {
     return request(app.getHttpServer())
-      .get('/')
+      .post('/auth/login')
+      .send({ username: 'admin', password: 'wrong' })
+      .expect(401);
+  });
+
+  it('logs in as the seeded admin with an HttpOnly cookie', async () => {
+    const login = await request(app.getHttpServer())
+      .post('/auth/login')
+      .send({ username: 'admin', password: 'admin' })
+      .expect(204);
+    const cookie = login.get('Set-Cookie') ?? [];
+    expect(cookie[0]).toContain('HttpOnly');
+    expect(cookie[0]).toContain('SameSite=Strict');
+
+    await request(app.getHttpServer())
+      .get('/auth/me')
+      .set('Cookie', cookie)
       .expect(200)
-      .expect('Hello World!');
+      .expect(({ body }) => expect(body.username).toBe('admin'));
+    await request(app.getHttpServer())
+      .get('/')
+      .set('Cookie', cookie)
+      .expect(200, 'Hello World!');
   });
 
   afterEach(async () => {
