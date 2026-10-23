@@ -1,0 +1,740 @@
+{
+  "source_file": "SPE1C127Q0018.pdf",
+  "solicitation": {
+    "number": "SPE1C1-27-Q-0018",
+    "issue_date": "2026-10-22",
+    "quote_due_date": "2026-10-29",
+    "purchase_request": "7018470621",
+    "small_business_set_aside": false,
+    "quote_validity_days": 90
+  },
+  "issuing_office": {
+    "lines": [
+      "DLA TROOP SUPPORT",
+      "C AND T SUPPLY CHAIN",
+      "700 ROBBINS AVENUE",
+      "PHILADELPHIA PA 19111-5096",
+      "USA"
+    ],
+    "city": "PHILADELPHIA",
+    "state": "PA",
+    "zip": "19111-5096"
+  },
+  "buyer": {
+    "name": "LAUREN BRADLEY",
+    "code": "DLB0138",
+    "phone": "8565080993",
+    "email": "LAUREN.M.BRADLEY@DLA.MIL"
+  },
+  "items": [
+    {
+      "pgc": "20616",
+      "description": "INSIGNIA, RANK, OFFICER, JROTC; POLYESTER SERGE CADET COLONEL, LARGE BLACK, COLORASSN. SHADE 65018 BACKGROUND, SYNTHETIC METALLIC SILVER YARN CHEVRON, SIZE, SLIP-ON ATTACHMENT,EMBROIDERED ITEM, WORN ON SHOULDER LOOPS, TYPE V, SIZE 1, CLASS 1",
+      "reference_docs": [
+        {
+          "id": "DD 22571 B-3-122",
+          "date": "1988-09-13"
+        },
+        {
+          "id": "DD 22571B-3-122-6CARTOON",
+          "date": "1987-10-22"
+        }
+      ],
+      "requirement_codes": [
+        {
+          "code": "RD003",
+          "text": "COVERED DEFENSE INFORMATION POTENTIALLY APPLIES"
+        },
+        {
+          "code": "RA001",
+          "text": "THIS DOCUMENT INCORPORATES TECHNICALAND/OR QUALITY REQUIREMENTS (IDENTIFIED BY AN 'R' OR AN 'I' NUMBER) SET FORTH IN FULL TEXT IN THE DLA MASTER LIST OF TECHNICAL ANDQUALITY REQUIREMENTS FOUND ON THE WEB AT:"
+        },
+        {
+          "code": "RP001",
+          "text": "DLA PACKAGING REQUIREMENTS FOR PROCUREMENT"
+        },
+        {
+          "code": "RQ011",
+          "text": "REMOVAL OF GOVERNMENTIDENTIFICATION FROM NON-ACCEPTED SUPPLIES"
+        }
+      ],
+      "notes": [
+        "http://www.dla.mil/HQ/Acquisition/Offers/eProcurement.aspx",
+        "FOR SIMPLIFIED ACQUISITIONS,THE REVISION OF THE MASTER IN EFFECT ON THE SOLICITATION ISSUE DATE OR THE AWARD DATE CONTROLS. FOR LARGE ACQUISITIONS, THEREVISION OF THE MASTER IN EFFECT ON THE RFP ISSUE DATE APPLIES UNLESS A SOLICITATION AMENDMENT INCORPORATES A FOLLOW-ON REVISION, IN WHICH CASE THE AMENDMENT DATE CONTROLS.",
+        "INSPECTION OF SUPPLIES SHALL BE IN ACCORDANCE WITH FAR PART 52.246-2 STANDARDINSPECTION.",
+        "ADDITIONAL INFORMATION FOR MIL-STD-105E:",
+        "MIL-STD-105E, dated 10 May 1989, is hereby canceled.",
+        "Future acquisitions may refer to: MIL-STD-1916, \"DoD Preferred Methods for Acceptance of Product,\" or ANSI/ASQ Z1.4, \"Sampling Procedures and Tables forInspection by Attributes.\"",
+        "Users are cautioned to evaluate these documents for their particular application before citing it as areplacement document.",
+        "(Copies of MIL-STD-1916 are available online at http://assist.daps.dla.mil or from the StandardizationDocument Order Desk, 700 Robbins Avenue, Building 4D, Philadelphia, PA 19111-5094.)",
+        "(Copies of ANSI/ASQ Z1.4 are available onlineat www.asq.org or ASQ Distribution Center, 5131 S. Third Street, Milwaukee, Wisconsin 53207-6028.)",
+        "ADDITIONAL INFORMATION FORANSI/ASQC Z1.4: NOTE: THE MOST RECENT VERSION OF THIS DOCUMENT SHOULD BE USED. APPLICATION FOR COPIES SHOULD BE ADDRESSEDTO: AMERICAN SOCIETY FOR QUALITY 600 NORTH PLANKINTON AVENUE MILWAUKEE, WISCONSIN 53203",
+        "(Ref. T0795 - May 17, 2006)",
+        "FIVE (5) FIRST ARTICLE SAMPLES ARE REQUIRED. FIRST ARTICLE TESTING SHALL BE PERFORMED AND THE CONTRACTOR WILL BE NOTIFIED IN WRITING WITHIN THIRTY (30) CALENDAR DAYS AFTER CONTRACTING OFFICER'S RECEIPT OF FIRST ARTICLE SAMPLES.",
+        "DLA issues this document using the DoD authorized unit of issue, please refer to the following URL to determine the corresponding ANSI X12 unit of issue.",
+        "https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fwww.dla.mil%2FPortals%2F104%2FDocuments%2FDLMS% 2FeApplications%2FLogDataAdmin%2FUnit_of_Issue_and_Purchase_Unit.xlsx&wdOrigin=BROWSELINK"
+      ],
+      "clins": [
+        {
+          "clin": "0001",
+          "nsn": "8455-01-271-3097",
+          "nomenclature": "INSIGNIA,RANK,OFFICER",
+          "quantity": 1000,
+          "unit": "PR",
+          "pricing_terms": "Firm Fixed Price",
+          "qty_variance_pct": {
+            "plus": 0,
+            "minus": 0
+          },
+          "inspection_point": "DESTINATION",
+          "acceptance_point": "DESTINATION",
+          "fob": "DESTINATION",
+          "delivery_days_ado": 120,
+          "rdd": "2027-05-28",
+          "pr": "7018470621",
+          "prli": "0001",
+          "packaging": {
+            "standard": "MIL-STD-2073-1E",
+            "codes": {
+              "QUP": "001",
+              "PRES MTHD": "10",
+              "CLNG/DRY": "0",
+              "PRESV MAT": "00",
+              "WRAP MAT": "00",
+              "CUSH/DUNN MAT": "00",
+              "CUSH/DUNNTHKNESS": "0",
+              "UNIT CONT": "ZZ",
+              "OPI": "O",
+              "INTRMDTE CONT": "ZZ",
+              "INTRMDTE CONT QTY": "ZZZ",
+              "PACK CODE": "Q",
+              "PACKING LEVEL": "B",
+              "SPECIAL MARKING CODE": "00"
+            },
+            "instructions": [
+              "PRES/PACK LEVELS SHALL BE A/C IN ACCORDANCE WITH MIL-I-14647. QUANTITY UNIT PACK SHALL BE IN ACCORDANCE WITH MIL-I-14647 UNIT PACKAGING:",
+              "A PAIR SHALL BE IN PLASTIC BAG. TEN (10) PAIR OFMARKS, OF ONE KIND ONLY, SHALL BE PRESERVED IN A SNUG FITTING FLAT STYLE POLYETHYLENE BAG. THE OPEN END OF BAG SHALL BE FOLDE OVERTAPE OR HEATED SEAL.",
+              "IN A SET-UP BOX. SIXTY (60) PAIR OF MARKS (6 BAGS OF TEN PAIRS), OF ONE KIND ONLY, SHALL BE PRESERVED",
+              "LABEL:EACH PAIR AND BAG SHALL BE LABEL AS THE FOLLOWING",
+              "Bar Code: NSN: Item Name: Quantity Unit Pack: Contract Number:",
+              "Packing. LevelA/B",
+              "FIFTEEN (15) SET-UP BOXES OF ONE KIND ONLY, SHALL BE PACKED IN A FIBERBOARD SHIPPING CONTAINER AS CITED ON SECTION 5.2.1."
+            ]
+          },
+          "ship_to": {
+            "parcel_post": {
+              "dodaac": "UY8615",
+              "lines": [
+                "ARIZONA INDUSTRIES FOR THE BLIND",
+                "515 N 51ST AVENUE NUMBER 130 DOCK 1",
+                "PHOENIX AZ 85043",
+                "US"
+              ],
+              "city": "PHOENIX",
+              "state": "AZ",
+              "zip": "85043"
+            },
+            "freight": {
+              "dodaac": "UY8615",
+              "lines": [
+                "ARIZONA INDUSTRIES FOR THE BLIND",
+                "515 N 51ST AVENUE NUMBER 130 DOCK 1",
+                "PHOENIX AZ 85043",
+                "US"
+              ],
+              "city": "PHOENIX",
+              "state": "AZ",
+              "zip": "85043"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "first_article": {
+    "quantity": 5,
+    "lot_item": "8455012713097",
+    "due_days_after_award": 30,
+    "govt_decision_days": 30,
+    "ship_to": "DLA Troop Support 700 Robbins Avenue Philadelphia, PA 19111 C&T Building 3/ Bay A/ Work station 4065 Attention: Lauren Bradley"
+  },
+  "warranty_months": 12,
+  "notes": [
+    "THE PURCHASE ORDER CLAUSES ARE APPLICABLE AS INDICATED IN THE DLA MASTER SOLICITATION FOR EPROCUREMENT AUTOMATED SIMPLIFIED ACQUISITIONS (PART 13) REVISION 105 (May 20, 2026) WHICH CAN BE FOUND ON THE WEB AT:",
+    "https://www.dla.mil/Portals/105/Documents/J7Acquisition/MasterSolicitation4ASAcqRev-105 May 20, 2026.pdf",
+    "This solicitation/award includes domestic preference requirements as identified in the Berry Amendment. Offers are cautioned that ALL components must be of domestic origin in compliance with clause 252.225-7012, Preference for Certain Domestic Commodities (DEC 2017) as contained in Section I of this",
+    "As part of the United States Defense Industrial Base, offerors are strongly encouraged to develop pricing that adequately accounts for market risk and volatility, includes sufficient margins to withstand future unforeseen contingencies, and allows for long term viability. Offerors are advised to refrain from submitting any offers or bids with the anticipation that in the event costs increase that there may be a price adjustment and/or cancellation of the contract. Offers are reminded that the awardee is expected to, and will be contractually bound to, perform at the final pricing submitted for the duration of the contract performance period(s) established in this solicitation. The successful performance of your contract is critical to the continued support of our nation’s warfighters.",
+    "*FAR 52.248-01, Alt III Value Engineering is applicable to this award.",
+    "*Five (5) first articles are due 30 days after date of award.",
+    "Submit Samples to:",
+    "DLA Troop Support",
+    "700 Robbins Ave.",
+    "Philadelphia, PA 19111",
+    "Attn: Lauren Bradley",
+    "Bay A/ Bldg. 3 / WK Station 4065",
+    "Note: The government reserves the right to cancel the order if first article samples are not received 30 days after award or in the event of First Article Failure. Repeated First Article failure may result in termination for default.",
+    "*The Quality Standards of DPSCM 4155.3 apply to this acquisition",
+    "CAUTION NOTICE - CONTRACTOR CODE OF BUSINESS ETHICS (FEB 2012)",
+    "FAR Part 3.1002(a) requires all government contractors to conduct themselves with the highest degree of integrity and honesty. Contractors should have a written code of business ethics and conduct within thirty days of award. To promote compliance with such code of business ethics and conduct, contractors should have an employee business ethics and compliance training program that facilitates timely discovery and disclosure of improper conduct in connection with government contracts and ensures corrective measures are promptly instituted and carried out. A contractor may be suspended and/or debarred for knowing failure by a principal to timely disclose to the government, in connection with the award, performance, or closeout of a government contract performed by the contractor or a subcontract awarded there under, credible evidence of a violation of federal criminal law involving fraud, conflict of interest, bribery, or gratuity violations found in title 18 of the United States Code or a violation of the False Claims Act. (31 U.S.C. 3729-3733)",
+    "If this solicitation or contract includes FAR clause 52.203-13",
+    "- CONTRACTOR CODE OF BUSINESS ETHICS AND CONDUCT; the contractor shall comply with the terms of the clause and have a written code of business ethics and conduct; exercise due diligence to prevent and detect criminal conduct; promote ethical conduct and a commitment to compliance with the law within their organization; and timely report any violations of federal criminal law involving fraud, conflict of interest, bribery or gratuity violations found in title 18 of the United States Code or any violations of the False Claims Act. (31 U.S.C. 3729-3733) When FAR 52.203-13 is included in the contract, contractors must provide a copy of its written code of business ethics and conduct to the contracting officer upon request by the contracting officer.",
+    "CAUTION NOTICE – PATIENT PROTECTION AND AFFORDABLE HEALTH CARE ACT:",
+    "Please note that the Patient Protection and Affordable Health Care Act (\"the Act\"), 124 Stat. 119, imposes duties upon employers concerning the provision of health care to their employees. Health insurance costs, including any costs associated with compliance with changes in the applicable law, are the sole responsibility of the offeror. Offerors are advised that their proposals should include any costs associated with the implementation of the Act. Any changes in health coverage costs and/or costs associated with compliance, occurring after award of a contract pursuant to this solicitation will not form the basis for an equitable adjustment of the contract price.",
+    "CAUTION NOTICE – E-VERIFY:",
+    "Pursuant to FAR clause 52.222-54 vendors are required to enroll in the E-Verify program within thirty days after the date of a contract award and comply with all terms of the clause. In addition, vendors are required to provide evidence of their enrollment in the E-verify program to the contracting officer within 30 days after the date of a contract award.",
+    "*VIM-ASAP is the ONLY authorized method to electronically process requests for payment to WAWF-RA.",
+    "*YOU MUST REGISTER IN VIM TO INVOICE ELECTRONICALLY",
+    "*If you are not registered to access VIM please go to vim.dla.mil and contact the VIM helpdesk desk at VIMSUPPORT@dla. mil",
+    "*In order to be considered for this award bidder must provide an end product manufactured by a vendor certified by The Institute of Heraldry (TIOH) and listed on the The Institute of Heraldry certified manufacturer list. The current list is found here: http://www.tioh.hqda.pentagon.mil/Catalog/VendorList.aspx.",
+    "*Please following directions listed here http://www.tioh.hqda.pentagon.mil/Content/docs/Contact-Us_Final.pdf to inquire about becoming a TIOH Certified Manufacturer."
+  ],
+  "clauses": [
+    {
+      "section": "C",
+      "number": "C03",
+      "title": "CONTRACTOR RETENTION OF SUPPLY CHAIN TRACEABILITY DOCUMENTATION",
+      "date": "JUN 2023"
+    },
+    {
+      "section": "E",
+      "number": "E08",
+      "title": "FIRST ARTICLE TESTING REQUIREMENTS",
+      "date": "MAR 2025"
+    },
+    {
+      "section": "E",
+      "number": "E02",
+      "title": "SUPPLEMENTAL FIRST ARTICLE EXHIBIT DISPOSITION – GOVERNMENT MAINTAINED",
+      "date": "MAY 2020"
+    },
+    {
+      "section": "E",
+      "number": "E10",
+      "title": "GOVERNMENT FIRST ARTICLE TEST (FAT) INFORMATION",
+      "date": "JUL 2022"
+    },
+    {
+      "section": "E",
+      "number": "52.246-2",
+      "title": "INSPECTION OF SUPPLIES FIXED PRICE",
+      "date": "AUG 1996"
+    },
+    {
+      "section": "E",
+      "number": "E04",
+      "title": "PRODUCTION LOT TESTING",
+      "date": "MAY 2020"
+    },
+    {
+      "section": "F",
+      "number": "52.242-17",
+      "title": "GOVERNMENT DELAY OF WORK",
+      "date": "APR 1984"
+    },
+    {
+      "section": "F",
+      "number": "52.247-34",
+      "title": "F.O.B. DESTINATION",
+      "date": "JAN 1991"
+    },
+    {
+      "section": "F",
+      "number": "52.247-48",
+      "title": "F.O.B. DESTINATION - EVIDENCE OF SHIPMENT",
+      "date": "FEB 1999"
+    },
+    {
+      "section": "G",
+      "number": "252.232-7006",
+      "title": "WIDE AREA WORKFLOW PAYMENT INSTRUCTIONS (PRE-FILLED)",
+      "date": "JAN 2023"
+    },
+    {
+      "section": "H",
+      "number": "H18",
+      "title": "DEFENSE PRIORITIES AND ALLOCATIONS SYSTEM (DPAS) RATED AWARDS",
+      "date": "FEB 2025"
+    },
+    {
+      "section": "I",
+      "number": "252.201-7000",
+      "title": "CONTRACTING OFFICER'S REPRESENTATIVE",
+      "date": "DEC 1991"
+    },
+    {
+      "section": "I",
+      "number": "52.203-18",
+      "title": "PROHIBITION ON CONTRACTING WITH ENTITIES THAT REQUIRE CERTAIN INTERNAL CONFIDENTIALITY AGREEMENTS OR STATEMENTS-REPRESENTATION",
+      "date": "JAN 2017"
+    },
+    {
+      "section": "I",
+      "number": "52.203-19",
+      "title": "PROHIBITION ON REQUIRING CERTAIN INTERNAL CONFIDENTIALITY AGREEMENTS OR STATEMENTS",
+      "date": "JAN 2017"
+    },
+    {
+      "section": "I",
+      "number": "252.203-7000",
+      "title": "REQUIREMENTS RELATING TO COMPENSATION OF FORMER DOD OFFICIALS",
+      "date": "SEP 2011"
+    },
+    {
+      "section": "I",
+      "number": "252.203-7002",
+      "title": "REQUIREMENT TO INFORM EMPLOYEES OF WHISTLEBLOWER RIGHTS",
+      "date": "DEC 2022"
+    },
+    {
+      "section": "I",
+      "number": "52.204-13",
+      "title": "SYSTEM FOR AWARD MANAGEMENT -- MAINTENANCE",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "I",
+      "number": "52.204-19",
+      "title": "INCORPORATION BY REFERENCE OF REPRESENTATIONS AND CERTIFICATIONS",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "I",
+      "number": "252.204-7004",
+      "title": "ANTITERRORISM AWARENESS TRAINING FOR CONTRACTORS",
+      "date": "JAN 2023"
+    },
+    {
+      "section": "I",
+      "number": "252.204-7014",
+      "title": "LIMITATIONS ON THE USE OR DISCLOSURE OF INFORMATION BY LITIGATION SUPPORT CONTRACTORS",
+      "date": "JAN 2023"
+    },
+    {
+      "section": "I",
+      "number": "52.209-4",
+      "title": "FIRST ARTICLE APPROVAL - GOVERNMENT TESTING",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "I",
+      "number": "52.209-4",
+      "title": "FIRST ARTICLE APPROVAL - GOVERNMENT TESTING",
+      "date": "FEB 2026",
+      "alt": "I",
+      "alt_date": "JAN 1997",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "I",
+      "number": "52.211-5",
+      "title": "MATERIAL REQUIREMENTS",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "I",
+      "number": "52.215-8",
+      "title": "ORDER OF PRECEDENCE - UNIFORM CONTRACT FORMAT",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "I",
+      "number": "252.219-7000",
+      "title": "ADVANCING SMALL BUSINESS GROWTH",
+      "date": "JUN 2023"
+    },
+    {
+      "section": "I",
+      "number": "52.222-37",
+      "title": "EMPLOYMENT REPORTS ON VETERANS",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "I",
+      "number": "52.222-62",
+      "title": "PAID SICK LEAVE UNDER EXECUTIVE ORDER 13706",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "I",
+      "number": "52.223-23",
+      "title": "SUSTAINABLE PRODUCTS",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "I",
+      "number": "252.223-7009",
+      "title": "PROHIBITION OF PROCUMENT OF FLOURINATED AQUEOUS FILM-FORMING FOAM FIRE-FIGHTING AGENT FOR USE ON MILITARY INSTALLATIONS",
+      "date": "MAR 2024"
+    },
+    {
+      "section": "I",
+      "number": "252.225-7013",
+      "title": "DUTY-FREE ENTRY",
+      "date": "OCT 2025"
+    },
+    {
+      "section": "I",
+      "number": "252.225-7041",
+      "title": "CORRESPONDENCE IN ENGLISH",
+      "date": "JUN 1997"
+    },
+    {
+      "section": "I",
+      "number": "252.225-7048",
+      "title": "EXPORT-CONTROLLED ITEMS",
+      "date": "JUN 2013"
+    },
+    {
+      "section": "I",
+      "number": "252.225-7052",
+      "title": "RESTRICTION ON THE ACQUISITION OF CERTAIN MAGNETS, TANTALUM, AND TUNGSTEN",
+      "date": "MAY 2024"
+    },
+    {
+      "section": "I",
+      "number": "52.226-8",
+      "title": "ENCOURAGING CONTRACTOR POLICIES TO BAN TEXT MESSAGING WHILE DRIVING",
+      "date": "MAY 2024"
+    },
+    {
+      "section": "I",
+      "number": "52.232-1",
+      "title": "PAYMENTS",
+      "date": "APR 1984"
+    },
+    {
+      "section": "I",
+      "number": "52.232-8",
+      "title": "DISCOUNTS FOR PROMPT PAYMENT",
+      "date": "FEB 2002"
+    },
+    {
+      "section": "I",
+      "number": "52.232-11",
+      "title": "EXTRAS",
+      "date": "APR 1984"
+    },
+    {
+      "section": "I",
+      "number": "52.232-25",
+      "title": "PROMPT PAYMENT",
+      "date": "JAN 2017"
+    },
+    {
+      "section": "I",
+      "number": "52.232-33",
+      "title": "PAYMENT BY ELECTRONIC FUNDS TRANSFER-SYSTEM FOR AWARD MANAGEMENT",
+      "date": "OCT 2018"
+    },
+    {
+      "section": "I",
+      "number": "52.232-40",
+      "title": "PROVIDING ACCELERATED PAYMENTS TO SMALL BUSINESS SUBCONTRACTORS",
+      "date": "MAR 2023"
+    },
+    {
+      "section": "I",
+      "number": "252.232-7003",
+      "title": "ELECTRONIC SUBMISSION OF PAYMENT REQUESTS AND RECEIVING REPORTS",
+      "date": "DEC 2018"
+    },
+    {
+      "section": "I",
+      "number": "52.233-1",
+      "title": "DISPUTES",
+      "date": "MAY 2014"
+    },
+    {
+      "section": "I",
+      "number": "52.233-1",
+      "title": "DISPUTES",
+      "date": "MAY 2014",
+      "alt": "I",
+      "alt_date": "DEC 1991"
+    },
+    {
+      "section": "I",
+      "number": "52.233-3",
+      "title": "PROTEST AFTER AWARD",
+      "date": "AUG 1996"
+    },
+    {
+      "section": "I",
+      "number": "52.233-4",
+      "title": "APPLICABLE LAW FOR BREACH OF CONTRACT CLAIM",
+      "date": "OCT 2004"
+    },
+    {
+      "section": "I",
+      "number": "52.240-91",
+      "title": "SECURITY PROHIBITIONS AND EXCLUSIONS",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "I",
+      "number": "52.240-91",
+      "title": "SECURITY PROHIBITIONS AND EXCLUSIONS",
+      "date": "FEB 2026",
+      "alt": "I",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "I",
+      "number": "252.204-7003",
+      "title": "CONTROL OF GOVERNMENT PERSONNEL WORK PRODUCT",
+      "date": "APR 1992"
+    },
+    {
+      "section": "I",
+      "number": "252.204-7009",
+      "title": "LIMITATIONS ON THE USE OR DISCLOSURE OF THIRD-PARTY CONTRACTOR REPORTED CYBER INCIDENT INFORMATION",
+      "date": "JAN 2023"
+    },
+    {
+      "section": "I",
+      "number": "252.204-7012",
+      "title": "SAFEGUARDING COVERED DEFENSE INFORMATION AND CYBER INCIDENT REPORTING",
+      "date": "MAY 2024"
+    },
+    {
+      "section": "I",
+      "number": "252.204-7018",
+      "title": "PROHIBITION ON THE ACQUISITION OF COVERED DEFENSE TELECOMMUNICATIONS EQUIPMENT OR SERVICES",
+      "date": "JAN 2023"
+    },
+    {
+      "section": "I",
+      "number": "252.225-7051",
+      "title": "PROHIBITION ON ACQUISITION OF CERTAIN FOREIGN COMMERCIAL SATELLITE SERVICES",
+      "date": "DEC 2022"
+    },
+    {
+      "section": "I",
+      "number": "52.243-1",
+      "title": "CHANGES - FIXED PRICE",
+      "date": "AUG 1987"
+    },
+    {
+      "section": "I",
+      "number": "252.243-7001",
+      "title": "PRICING OF CONTRACT MODIFICATIONS",
+      "date": "DEC 1991"
+    },
+    {
+      "section": "I",
+      "number": "52.244-6",
+      "title": "SUBCONTRACTS FOR COMMERCIAL PRODUCTS AND COMMERCIAL SERVICES",
+      "date": "MAR 2025",
+      "deviation": "2025-O0003"
+    },
+    {
+      "section": "I",
+      "number": "252.244-7000",
+      "title": "SUBCONTRACTS FOR COMMERCIAL PRODUCTS OR COMMERCIAL SERVICES",
+      "date": "NOV 2023"
+    },
+    {
+      "section": "I",
+      "number": "252.244-7999",
+      "title": "SUBCONTRACTS FOR COMMERCIAL PRODUCTS OR COMMERCIAL SERVICES",
+      "date": "FEB 2026",
+      "deviation": "2026-O0015"
+    },
+    {
+      "section": "I",
+      "number": "52.246-17",
+      "title": "WARRANTY OF SUPPLIES OF A NONCOMPLEX NATURE",
+      "date": "JUN 2003"
+    },
+    {
+      "section": "I",
+      "number": "252.246-7007",
+      "title": "CONTRACTOR COUNTERFEIT ELECTRONIC PART DETECTION AND AVOIDANCE SYSTEM",
+      "date": "JAN 2023"
+    },
+    {
+      "section": "I",
+      "number": "252.246-7008",
+      "title": "SOURCES OF ELECTRONIC PARTS",
+      "date": "JAN 2023"
+    },
+    {
+      "section": "I",
+      "number": "52.247-68",
+      "title": "REPORT OF SHIPMENT (RESHIP)",
+      "date": "FEB 2006"
+    },
+    {
+      "section": "I",
+      "number": "252.247-7023",
+      "title": "TRANSPORATION OF SUPPLIES BY SEA --- BASIC",
+      "date": "OCT 2024"
+    },
+    {
+      "section": "I",
+      "number": "52.249-1",
+      "title": "TERMINATION FOR CONVENIENCE OF THE GOVERNMENT (FIXED-PRICE) (SHORT FORM)",
+      "date": "APR 1984"
+    },
+    {
+      "section": "I",
+      "number": "52.249-8",
+      "title": "DEFAULT (FIXED-PRICE SUPPLY AND SERVICE)",
+      "date": "APR 1984"
+    },
+    {
+      "section": "I",
+      "number": "52.252-2",
+      "title": "CLAUSES INCORPORATED BY REFERENCE",
+      "date": "FEB 1998"
+    },
+    {
+      "section": "I",
+      "number": "52.253-1",
+      "title": "COMPUTER GENERATED FORMS",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "I",
+      "number": "252.204-7024",
+      "title": "NOTICE ON THE USE OF THE SUPPLIER PERFORMANCE RISK SYSTEM",
+      "date": "MAR 2023"
+    },
+    {
+      "section": "I",
+      "number": "252.239-7098",
+      "title": "PROHIBITION ON CONTRACTING TO MAINTAIN OR ESTABLISH A COMPUTER NETWORK UNLESS SUCH NETWORK IS DESIGNED TO BLOCK ACCESS TO CERTAIN WEBSITES---REPRESENTATION",
+      "date": "APR 2021",
+      "deviation": "2021-O0003"
+    },
+    {
+      "section": "I",
+      "number": "52.232-39",
+      "title": "UNENFORCEABILITY OF UNAUTHORIZED OBLIGATIONS",
+      "date": "JUN 2013"
+    },
+    {
+      "section": "K",
+      "number": "252.204-7007",
+      "title": "ALTERNATE A, ANNUAL REPRESENTATIONS AND CERTIFICATIONS",
+      "date": "OCT 2024"
+    },
+    {
+      "section": "K",
+      "number": "52.207-4",
+      "title": "ECONOMIC PURCHASE QUANTITY---SUPPLIES",
+      "date": "AUG 1987"
+    },
+    {
+      "section": "K",
+      "number": "52.209-2",
+      "title": "PROHIBITION ON CONTRACTING WITH INVERTED DOMESTIC CORPORATIONS - REPRESENTATION",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "K",
+      "number": "52.209-11",
+      "title": "REPRESENTATION BY CORPORATIONS REGARDING DELINQUENT TAX LIABILITY OR A FELONY CONVICTION UNDER ANY FEDERAL LAW",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "K",
+      "number": "52.219-31",
+      "title": "NOTICE OF SMALL BUSINESS RESERVE",
+      "date": "MAR 2020"
+    },
+    {
+      "section": "K",
+      "number": "52.225-18",
+      "title": "PLACE OF MANUFACTURE",
+      "date": "AUG 2018"
+    },
+    {
+      "section": "K",
+      "number": "252.225-7000",
+      "title": "BUY AMERICAN -- BALANCE OF PAYMENTS PROGRAM CERTIFICATE",
+      "date": "FEB 2024"
+    },
+    {
+      "section": "K",
+      "number": "252.225-7059",
+      "title": "PROHIBITION ON CERTAIN PROCUREMENTS FROM THE XINJIANG UYGHUR AUTONOMOUS REGION --REPRESENTATION",
+      "date": "JUN 2023"
+    },
+    {
+      "section": "K",
+      "number": "252.225-7966",
+      "title": "PROHIBITION REGARDING RUSSIAN FOSSIL FUEL BUSINESS OPERATIONS - REPRESENTATION",
+      "date": "MAR 2024",
+      "deviation": "2024-O0006, REVISION 1"
+    },
+    {
+      "section": "K",
+      "number": "52.240-90",
+      "title": "SECURITY PROHIBITIONS AND EXCLUSIONS REPRESENTATIONS AND CERTIFICATIONS",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "K",
+      "number": "252.204-7016",
+      "title": "COVERED DEFENSE TELECOMMUNICATIONS EQUIPMENT OR SERVICES -- REPRESENTATION",
+      "date": "DEC 2019"
+    },
+    {
+      "section": "K",
+      "number": "252.204-7017",
+      "title": "PROHIBITION ON THE ACQUISITON OF COVERED DEFENSE TELECOMMUNICATIONS EQUIPMENT OR SERVICES --REPRESENTATION",
+      "date": "MAY 2021"
+    },
+    {
+      "section": "L",
+      "number": "252.203-7005",
+      "title": "REPRESENTATION RELATING TO COMPENSATION OF FORMER DOD OFFICIALS",
+      "date": "SEP 2022"
+    },
+    {
+      "section": "L",
+      "number": "52.204-7",
+      "title": "SYSTEM FOR AWARD MANAGEMENT -- REGISTRATION",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "L",
+      "number": "252.215-7013",
+      "title": "SUPPLES AND SERVICES PROVIDED BY NONTRADITIONAL DEFENSE CONTRACTORS",
+      "date": "JAN 2023"
+    },
+    {
+      "section": "L",
+      "number": "L06",
+      "title": "AGENCY PROTESTS",
+      "date": "DEC 2016"
+    },
+    {
+      "section": "L",
+      "number": "252.204-7008",
+      "title": "COMPLIANCE WITH SAFEGUARDING COVERED DEFENSE INFORMATION CONTROLS",
+      "date": "OCT 2016"
+    },
+    {
+      "section": "M",
+      "number": "M05",
+      "title": "EVALUATION FACTOR FOR USED, RECONDITIONED, REMANUFACTURED SUPPLIES OR UNUSED FORMER GOVERNMENT SURPLUS PROPERTY",
+      "date": "SEP 2016"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "rfqcrm",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently --kill-others --names api,web \"npm run start:dev -w backend\" \"npm run dev -w frontend\"",
+    "build": "npm run build --workspaces"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  },
+  "allowScripts": {
+    "better-sqlite3@12.11.1": true
+  }
+}
