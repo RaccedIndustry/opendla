@@ -77,19 +77,25 @@ describe('Solicitations (e2e)', () => {
 
   afterEach(() => app.close());
 
-  const numbers = async (q: string) => {
+  const lines = async (query: Record<string, string>) => {
     const { body } = await api()
       .get(`/archives/${day}/lines`)
-      .query({ q })
+      .query(query)
       .expect(200);
-    return (body as { number: string }[]).map((r) => r.number);
+    return body as {
+      total: number;
+      rows: { number: string }[];
+      options: Record<string, unknown[]>;
+    };
   };
+  const numbers = async (q: string) =>
+    (await lines({ q })).rows.map((r) => r.number);
 
   it('lists each line with its RFQ, approved sources and the latest award', async () => {
     const { body } = await api().get(`/archives/${day}/lines`).expect(200);
-    expect(body).toHaveLength(2);
-    for (const row of body) expect(row).not.toHaveProperty('data');
-    expect(body).toEqual([
+    expect(body.total).toBe(2);
+    for (const row of body.rows) expect(row).not.toHaveProperty('data');
+    expect(body.rows).toEqual([
       expect.objectContaining({
         number: 'SPE7L3-27-U-0039',
         clin: '0001',
@@ -137,6 +143,55 @@ describe('Solicitations (e2e)', () => {
 
   it('rejects a repeated q', () =>
     api().get(`/archives/${day}/lines?q=a&q=b`).expect(400));
+
+  it('pages and filters on the server, and lists each filter’s values', async () => {
+    // Due 2026-11-09 sorts before 2026-12-01.
+    expect(await lines({ size: '1' })).toMatchObject({
+      total: 2,
+      rows: [{ number: 'SPE7L3-27-U-0039' }],
+    });
+    expect((await lines({ size: '1', page: '2' })).rows).toMatchObject([
+      { number: 'TEST00-26-T-0001' },
+    ]);
+    // Past the end: the last page.
+    expect((await lines({ size: '1', page: '9' })).rows).toMatchObject([
+      { number: 'TEST00-26-T-0001' },
+    ]);
+
+    const controlled = await lines({ controlled: 'true' });
+    expect(controlled).toMatchObject({
+      total: 1,
+      rows: [{ number: 'TEST00-26-T-0001' }],
+    });
+    expect(
+      (await lines({ setAside: 'H', controlled: 'false' })).rows,
+    ).toMatchObject([{ number: 'SPE7L3-27-U-0039' }]);
+
+    // From the day and the search, never the filters, so picking one hides none.
+    const options = {
+      quoteDueDate: ['2026-11-09', '2026-12-01'],
+      setAside: ['H'],
+      controlled: [false, true],
+      firstArticle: [false],
+      office: ['DLA WEAPONS SUPPORT'], // the stub has none
+    };
+    expect((await lines({})).options).toEqual(options);
+    expect(controlled.options).toEqual(options);
+    expect((await lines({ q: 'additive manufacturing' })).options).toEqual({
+      ...options,
+      quoteDueDate: ['2026-11-09'],
+      controlled: [false],
+    });
+
+    for (const bad of [
+      'page=0',
+      'size=x',
+      'setAside=H&setAside=Y',
+      'controlled=yes',
+    ]) {
+      await api().get(`/archives/${day}/lines?${bad}`).expect(400);
+    }
+  });
 
   it('returns one RFQ with its JSON and the awards on record for its NSN', async () => {
     const { id } = await db

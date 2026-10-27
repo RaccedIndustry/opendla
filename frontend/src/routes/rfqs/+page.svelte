@@ -1,17 +1,18 @@
 <script lang="ts">
+	import { page } from '$app/state';
 	import { usd, type Rfq } from '#lib/api.ts';
 	import DataTable from '#lib/DataTable.svelte';
 	import RfqDetail from '#lib/rfq/RfqDetail.svelte';
-	import type { PageProps } from './$types';
+	import type { PageData, PageProps } from './$types';
 
 	let { data }: PageProps = $props();
 	let dialog = $state<HTMLDialogElement>();
 	let detail = $state<Rfq>();
 	const archive = $derived(data.archives.find((a) => a.id === data.archive));
 
-	// The latest award on record for the line's NSN, with what qualifies the price.
-	const rows = $derived(
-		data.lines.map((l) => ({
+	/** Adds the latest award on record for each line's NSN, with what qualifies the price. */
+	const withLastAward = (lines: PageData['lines']['rows']) =>
+		lines.map((l) => ({
 			...l,
 			lastAward:
 				l.lastPrice === null
@@ -24,8 +25,19 @@
 						]
 							.filter(Boolean)
 							.join(' · ')
-		}))
-	);
+		}));
+	const rows = $derived(withLastAward(data.lines.rows));
+
+	/** Every line the search and filters let through, for export: one page as big as the total. */
+	async function all() {
+		const params = new URLSearchParams(page.url.search);
+		params.delete('archive');
+		params.delete('page');
+		params.set('size', String(data.lines.total));
+		const res = await fetch(`/api/archives/${data.archive}/lines?${params}`);
+		if (!res.ok) return alert(`Couldn't load the rows to export (${res.status})`);
+		return withLastAward((await res.json()).rows);
+	}
 
 	/** Opens the whole RFQ: everything parsed from it and every award on record for its NSNs. */
 	async function show(id: number) {
@@ -43,6 +55,7 @@
 {:else}
 	<DataTable
 		{rows}
+		server={{ total: data.lines.total, options: data.lines.options, all }}
 		searchable={false}
 		filename="rfqs-{archive?.date}"
 		columns={[
@@ -85,6 +98,10 @@
 					placeholder="Search all RFQ text"
 					aria-label="Search all RFQ text"
 				/>
+				<!-- A new search or day keeps the table's filters and rows per page, and starts at page 1. -->
+				{#each [...page.url.searchParams] as [name, value]}
+					{#if !['archive', 'q', 'page'].includes(name)}<input type="hidden" {name} {value} />{/if}
+				{/each}
 				<button>Search</button>
 			</form>
 		{/snippet}

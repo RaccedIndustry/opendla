@@ -1,6 +1,7 @@
 <script lang="ts" generics="T extends { id: number }">
 	import type { Snippet } from 'svelte';
-	import { afterNavigate } from '$app/navigation';
+	import { goto } from '$app/navigation';
+	import { page as route } from '$app/state';
 	import { csv, download, text, xlsx } from '#lib/export.ts';
 
 	type Key = keyof T & string;
@@ -11,7 +12,8 @@
 		searchable = true,
 		filename,
 		toolbar,
-		cell
+		cell,
+		server
 	}: {
 		rows: T[];
 		/** Up to 5 columns marked `filter` get a dropdown. */
@@ -24,44 +26,72 @@
 		toolbar?: Snippet;
 		/** Custom cell content; `text` is the default to fall back on. */
 		cell?: Snippet<[row: T, key: Key, text: string]>;
+		/**
+		 * Paged and filtered on the server: `rows` is the page the URL asks for, `options` lists each filter's
+		 * values, and `all` fetches every matching row for export (nothing after showing its own error).
+		 */
+		server?: { total: number; options: Record<string, unknown[]>; all: () => Promise<T[] | void> };
 	} = $props();
 
 	const SIZES = [10, 25, 50, 100];
 
-	let search = $state('');
-	let picked = $state<Record<string, string>>({});
-	let size = $state(25);
-	let page = $state(0);
-	// Another archive or a server search starts at page 1; a refresh after an edit keeps the page.
-	afterNavigate(() => (page = 0));
-
+	// The page, rows per page and filters live in the URL, so a link or Back shows the same rows, and a
+	// server-side table's load function can pass them on. A new archive or server search drops them with its
+	// GET form; a refresh after an edit keeps them.
+	const params = $derived(route.url.searchParams);
+	const size = $derived(Number(params.get('size')) || 25);
+	const page = $derived(Math.max(1, Number(params.get('page')) || 1) - 1);
 	const filters = $derived(columns.filter((c) => c.filter).slice(0, 5));
-	// Distinct values per filter. The picked one stays listed when the rows change, so it can be cleared.
+	const picked = $derived(Object.fromEntries(filters.map((c) => [c.key, params.get(c.key) ?? ''])));
+	let search = $state('');
+
+	/** Opens this view with `changes` in the URL ('' removes a param), keeping the scroll and focus. */
+	function go(changes: Record<string, string | number>) {
+		const url = new URL(route.url.href);
+		for (const [k, v] of Object.entries(changes)) {
+			if (v === '') url.searchParams.delete(k);
+			else url.searchParams.set(k, String(v));
+		}
+		// Typing a search on page 1 changes nothing, so it doesn't navigate on every keystroke.
+		if (url.href !== route.url.href) goto(url, { reset: false });
+	}
+	/** Page 1 keeps the URL clean. */
+	const to = (n: number) => go({ page: n ? n + 1 : '' });
+
+	// Each filter's values as [value in the URL, label]: the server's, or the distinct ones in `rows`.
+	// Booleans go in the URL as true/false and read Yes/No. The picked one stays listed when the rows
+	// change, so it can be cleared.
 	const options = $derived(
 		Object.fromEntries(
-			filters.map((c) => [
-				c.key,
-				[...new Set([...rows.map((r) => text(r[c.key])), picked[c.key] ?? ''])]
-					.filter(Boolean)
-					.sort()
-			])
+			filters.map((c) => {
+				const values = new Map(picked[c.key] ? [[picked[c.key], picked[c.key]]] : []);
+				for (const v of server ? (server.options[c.key] ?? []) : rows.map((r) => r[c.key])) {
+					if (text(v)) values.set(String(v), text(v));
+				}
+				return [c.key, [...values].sort(([a], [b]) => (a < b ? -1 : 1))];
+			})
 		)
 	);
 	const shown = $derived.by(() => {
+		if (server) return rows;
 		const q = search.trim().toLowerCase();
 		return rows.filter(
 			(r) =>
-				filters.every((c) => !picked[c.key] || text(r[c.key]) === picked[c.key]) &&
+				filters.every((c) => !picked[c.key] || String(r[c.key]) === picked[c.key]) &&
 				(!q || columns.some((c) => text(r[c.key]).toLowerCase().includes(q)))
 		);
 	});
-	const pages = $derived(Math.max(1, Math.ceil(shown.length / size)));
-	// Clamped: a refresh can leave fewer pages, e.g. after deleting the last row.
+	const count = $derived(server?.total ?? shown.length);
+	const pages = $derived(Math.max(1, Math.ceil(count / size)));
+	// Clamped: a refresh can leave fewer pages, e.g. after deleting the last row. The server clamps the same way.
 	const current = $derived(Math.min(page, pages - 1));
+	const visible = $derived(server ? rows : shown.slice(current * size, (current + 1) * size));
 
 	/** Every row the search and filters let through, not just this page. */
 	async function exportAs(ext: 'csv' | 'xlsx') {
-		const table = [columns.map((c) => c.label), ...shown.map((r) => columns.map((c) => r[c.key]))];
+		const all = server ? await server.all() : shown;
+		if (!all) return;
+		const table = [columns.map((c) => c.label), ...all.map((r) => columns.map((c) => r[c.key]))];
 		const blob = ext === 'csv' ? new Blob([csv(table)], { type: 'text/csv' }) : await xlsx(table);
 		download(blob, `${filename ?? location.pathname.slice(1)}.${ext}`);
 	}
@@ -97,21 +127,21 @@
 			placeholder="Search"
 			aria-label="Search"
 			bind:value={search}
-			oninput={() => (page = 0)}
+			oninput={() => to(0)}
 		/>
 	{/if}
 	{#each filters as c (c.key)}
 		<label>
 			{c.label}
-			<select bind:value={picked[c.key]} onchange={() => (page = 0)}>
+			<select value={picked[c.key]} onchange={(e) => go({ [c.key]: e.currentTarget.value, page: '' })}>
 				<option value="">All</option>
-				{#each options[c.key] as o (o)}<option>{o}</option>{/each}
+				{#each options[c.key] as [value, label] (value)}<option {value}>{label}</option>{/each}
 			</select>
 		</label>
 	{/each}
-	<span class="export" title="Exports every row that matches ({shown.length.toLocaleString()}), not just this page">
-		<button type="button" disabled={!shown.length} onclick={() => exportAs('csv')}>Export CSV</button>
-		<button type="button" disabled={!shown.length} onclick={() => exportAs('xlsx')}>Export XLSX</button>
+	<span class="export" title="Exports every row that matches ({count.toLocaleString()}), not just this page">
+		<button type="button" disabled={!count} onclick={() => exportAs('csv')}>Export CSV</button>
+		<button type="button" disabled={!count} onclick={() => exportAs('xlsx')}>Export XLSX</button>
 	</span>
 </div>
 
@@ -124,7 +154,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				{#each shown.slice(current * size, (current + 1) * size) as row (row.id)}
+				{#each visible as row (row.id)}
 					<tr>
 						{#each columns as c (c.key)}
 							<td>
@@ -146,41 +176,41 @@
 	{/if}
 </div>
 
-{#if shown.length > SIZES[0]}
+{#if count > SIZES[0]}
 	<div class="pager">
 		<span role="status">
-			{(current * size + 1).toLocaleString()}–{Math.min((current + 1) * size, shown.length).toLocaleString()}
-			of {shown.length.toLocaleString()}
+			{(current * size + 1).toLocaleString()}–{Math.min((current + 1) * size, count).toLocaleString()}
+			of {count.toLocaleString()}
 		</span>
 		<label class="size">
 			Rows per page
-			<select bind:value={size} onchange={() => (page = 0)}>
+			<select value={size} onchange={(e) => go({ size: e.currentTarget.value, page: '' })}>
 				{#each SIZES as n (n)}<option value={n}>{n}</option>{/each}
 			</select>
 		</label>
 		<!-- One group, so the arrows wrap together on phones. -->
 		<span class="nav">
-			<button type="button" aria-label="First page" disabled={current === 0} onclick={() => (page = 0)}
+			<button type="button" aria-label="First page" disabled={current === 0} onclick={() => to(0)}
 				>«</button
 			>
 			<button
 				type="button"
 				aria-label="Previous page"
 				disabled={current === 0}
-				onclick={() => (page = current - 1)}>‹</button
+				onclick={() => to(current - 1)}>‹</button
 			>
 			Page {current + 1} of {pages.toLocaleString()}
 			<button
 				type="button"
 				aria-label="Next page"
 				disabled={current === pages - 1}
-				onclick={() => (page = current + 1)}>›</button
+				onclick={() => to(current + 1)}>›</button
 			>
 			<button
 				type="button"
 				aria-label="Last page"
 				disabled={current === pages - 1}
-				onclick={() => (page = pages - 1)}>»</button
+				onclick={() => to(pages - 1)}>»</button
 			>
 		</span>
 	</div>
