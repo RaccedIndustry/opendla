@@ -81,6 +81,8 @@ export type Rfq = {
 	setAside: string | null;
 	amsc: string | null;
 	controlled: boolean;
+	/** Of the PDF it was parsed from; null for the demo seed, which has no PDF. */
+	sha256: string | null;
 	data: {
 		solicitation: {
 			dpas_rating: string | null;

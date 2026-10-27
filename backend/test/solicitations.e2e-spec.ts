@@ -2,6 +2,7 @@ import { INestApplication } from '@nestjs/common';
 import { Test } from '@nestjs/testing';
 import { getDataSourceToken, TypeOrmModule } from '@nestjs/typeorm';
 import { readFileSync } from 'node:fs';
+import { copyFile, mkdir, rm } from 'node:fs/promises';
 import request from 'supertest';
 import { App } from 'supertest/types.js';
 import { DataSource } from 'typeorm';
@@ -149,6 +150,35 @@ describe('Solicitations (e2e)', () => {
       unitPrice: 2417,
     });
     await api().get('/solicitations/999999').expect(404);
+  });
+
+  it('serves the PDF the RFQ was parsed from, and 404 when there is none', async () => {
+    // A day folder of its own: ca261022 can be a real downloaded day, and demo.e2e-spec.ts
+    // writes ca991231 at the same time.
+    const dir = 'data/archive/ca991230';
+    const fixture = 'test/fixtures/SPE7L327U0039.pdf';
+    const { id: dayId } = await addDay('2099-12-30');
+    await db.transaction((em) =>
+      storeRfq(em, dayId, sample, index, { sha256: 'f00', parserVersion: 1 }),
+    );
+    const rfqs = db.getRepository(Solicitation);
+    const { id } = await rfqs.findOneByOrFail({ archiveId: dayId });
+    await mkdir(dir, { recursive: true });
+    try {
+      await copyFile(fixture, `${dir}/SPE7L327U0039.pdf`);
+      const { body } = await api()
+        .get(`/solicitations/${id}/pdf`)
+        .expect(200)
+        .expect('Content-Type', 'application/pdf');
+      expect(body.equals(readFileSync(fixture))).toBe(true);
+      await rm(`${dir}/SPE7L327U0039.pdf`);
+      await api().get(`/solicitations/${id}/pdf`).expect(404);
+    } finally {
+      await rm(dir, { recursive: true, force: true });
+    }
+    const stub = await rfqs.findOneByOrFail({ number: 'TEST00-26-T-0001' });
+    await api().get(`/solicitations/${stub.id}/pdf`).expect(404); // no source_file
+    await api().get('/solicitations/999999/pdf').expect(404);
   });
 
   it('keeps one row per award when a later day prints it again', async () => {

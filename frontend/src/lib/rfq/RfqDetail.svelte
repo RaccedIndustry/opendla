@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { tick } from 'svelte';
 	import type { Rfq } from '#lib/api.ts';
+	import { download } from '#lib/export.ts';
 	import RfqAwards from './RfqAwards.svelte';
 	import RfqContact from './RfqContact.svelte';
 	import RfqFacts from './RfqFacts.svelte';
@@ -34,10 +35,18 @@
 		}
 		setTimeout(() => (copied = ''), 2000);
 	}
+
+	/** The PDF as DIBBS posted it, which the server keeps with the day's files. */
+	async function pdf() {
+		const res = await fetch(`/api/solicitations/${rfq.id}/pdf`);
+		if (!res.ok) return alert(`Couldn't download the PDF (${res.status})`);
+		download(await res.blob(), `${rfq.number}.pdf`);
+	}
 </script>
 
 <header>
 	<h2 id="rfq-title">{rfq.number}</h2>
+	{#if rfq.sha256}<button type="button" onclick={pdf}>Download PDF</button>{/if}
 	<button type="button" onclick={() => (raw = !raw)}>{raw ? 'Hide JSON' : 'Raw JSON'}</button>
 	<button type="button" onclick={copy} aria-live="polite">{copied || 'Copy JSON'}</button>
 	<form method="dialog"><button>Close</button></form>

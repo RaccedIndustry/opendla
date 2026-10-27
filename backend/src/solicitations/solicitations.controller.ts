@@ -1,3 +1,5 @@
+import { readFile } from 'node:fs/promises';
+import { join } from 'node:path';
 import {
   BadRequestException,
   Controller,
@@ -6,9 +8,11 @@ import {
   Param,
   ParseIntPipe,
   Query,
+  StreamableFile,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { In, Repository } from 'typeorm';
+import { folder } from '../ingest/ingest.service.js';
 import { AwardHistory, Line, Solicitation } from './solicitation.entity.js';
 
 @Controller()
@@ -79,5 +83,27 @@ export class SolicitationsController {
       order: { awardDate: 'DESC', id: 'DESC' },
     });
     return Object.assign(solicitation, { awards });
+  }
+
+  /** The PDF DIBBS posted for the RFQ, from its day's folder. */
+  @Get('solicitations/:id/pdf')
+  async pdf(@Param('id', ParseIntPipe) id: number) {
+    const [row]: { file: string | null; fileUrl: string }[] =
+      await this.solicitations.query(
+        `SELECT json_extract(s.data, '$.source_file') AS file, a.fileUrl
+         FROM solicitation s JOIN archive a ON a.id = s.archiveId WHERE s.id = ?`,
+        [id],
+      );
+    if (!row?.file) throw new NotFoundException();
+    // A bare file name (the parser gets basename(file)), so it can't leave the folder.
+    const bytes = await readFile(join(folder(row.fileUrl), row.file)).catch(
+      (err: NodeJS.ErrnoException) => {
+        // A demo day has no folder; a pruned day has none left.
+        throw err.code === 'ENOENT'
+          ? new NotFoundException('The PDF is not on this server')
+          : err;
+      },
+    );
+    return new StreamableFile(bytes, { type: 'application/pdf' });
   }
 }

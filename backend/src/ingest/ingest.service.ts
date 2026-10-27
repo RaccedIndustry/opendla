@@ -26,7 +26,7 @@ const ARCHIVE_DIR = 'data/archive'; // next to data/rfqcrm.sqlite
 const execFileAsync = promisify(execFile);
 
 /** A day's folder: ca261022.zip → data/archive/ca261022, which holds its PDFs and its index in261022.txt. */
-const folder = (fileUrl: string) =>
+export const folder = (fileUrl: string) =>
   join(ARCHIVE_DIR, basename(new URL(fileUrl).pathname, '.zip'));
 const indexFile = (dir: string) =>
   join(dir, `${basename(dir).replace(/^ca/, 'in')}.txt`);
