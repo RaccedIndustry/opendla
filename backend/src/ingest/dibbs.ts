@@ -81,3 +81,34 @@ export function listArchives(html: string) {
     }))
     .sort((a, b) => b.date.localeCompare(a.date));
 }
+
+/** What the daily index says about one solicitation. Its due date beats the PDF's: a re-posted RFQ keeps the old one. */
+export type IndexRow = { quoteDueDate: string; setAside: string; amsc: string };
+
+/**
+ * The daily index in{yymmdd}.txt, by solicitation number without dashes (SPE1C127Q0018). Fixed-width
+ * rows, one per solicitation and purchase request, read from the line end: return date MM/DD/YY,
+ * AMSC, set-aside code. Lines that don't fit are skipped.
+ */
+export function indexRows(text: string) {
+  const rows = new Map<string, IndexRow>();
+  for (const line of text.split(/\r?\n/)) {
+    const n = line.length;
+    const due = /^(\d\d)\/(\d\d)\/(\d\d)$/.exec(line.slice(n - 68, n - 60));
+    const amsc = line.charAt(n - 6),
+      setAside = line.charAt(n - 4);
+    if (
+      n < 100 ||
+      !due ||
+      !/^[A-Z0-9]$/.test(amsc) ||
+      !/^[A-Z]$/.test(setAside)
+    )
+      continue;
+    rows.set(line.slice(0, 13), {
+      quoteDueDate: `20${due[3]}-${due[1]}-${due[2]}`,
+      setAside,
+      amsc,
+    });
+  }
+  return rows;
+}

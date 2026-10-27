@@ -1,23 +1,25 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { INestApplication } from '@nestjs/common';
+import { INestApplication, Logger } from '@nestjs/common';
 import request from 'supertest';
 import { App } from 'supertest/types.js';
 import { AppModule } from './../src/app.module.js';
+import { AuthService } from './../src/auth/auth.service.js';
 
-describe('AppController (e2e)', () => {
+describe('App (e2e)', () => {
   let app: INestApplication<App>;
 
-  beforeEach(async () => {
+  const start = async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
       imports: [AppModule],
     }).compile();
 
     app = moduleFixture.createNestApplication();
     await app.init();
-  });
+  };
+  beforeEach(start);
 
-  it('/ (GET) needs a login', () => {
-    return request(app.getHttpServer()).get('/').expect(401);
+  it('/auth/me (GET) needs a login', () => {
+    return request(app.getHttpServer()).get('/auth/me').expect(401);
   });
 
   it('rejects a wrong password', () => {
@@ -41,10 +43,6 @@ describe('AppController (e2e)', () => {
       .set('Cookie', cookie)
       .expect(200)
       .expect(({ body }) => expect(body.username).toBe('admin'));
-    await request(app.getHttpServer())
-      .get('/')
-      .set('Cookie', cookie)
-      .expect(200, 'Hello World!');
   });
 
   it('manages users without exposing password hashes', async () => {
@@ -93,6 +91,27 @@ describe('AppController (e2e)', () => {
       .set('Cookie', admin)
       .expect(200);
     await request(server).get('/auth/me').set('Cookie', own).expect(401);
+  });
+
+  it('logs a generated admin password when ADMIN_PASSWORD is empty', async () => {
+    await app.close();
+    const warn = vi.spyOn(Logger.prototype, 'warn');
+    vi.stubEnv('ADMIN_PASSWORD', '');
+    await start(); // a fresh :memory: DB, so there are no users yet
+    vi.unstubAllEnvs();
+    const generated = /password ([\w-]+)/.exec(warn.mock.calls.join())?.[1];
+    const login = (password?: string) =>
+      request(app.getHttpServer())
+        .post('/auth/login')
+        .send({ username: 'admin', password });
+    await login('').expect(401);
+    await login(generated).expect(204);
+
+    // A restart with ADMIN_PASSWORD set resets it.
+    vi.stubEnv('ADMIN_PASSWORD', 'reset');
+    await app.get(AuthService).onApplicationBootstrap();
+    vi.unstubAllEnvs();
+    await login('reset').expect(204);
   });
 
   afterEach(async () => {

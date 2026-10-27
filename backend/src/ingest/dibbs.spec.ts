@@ -1,4 +1,4 @@
-import { consentForm, listArchives } from './dibbs.js';
+import { consentForm, indexRows, listArchives } from './dibbs.js';
 
 // Trimmed from the banner dibbs2.bsm.dla.mil serves in place of a zip.
 const banner = `<body onload="window.name='DIBBSDocuments';">
@@ -52,5 +52,24 @@ describe('listArchives', () => {
       { fileUrl: `${base}/ca261022.zip`, date: '2026-10-22' },
       { fileUrl: `${base}/ca261021.zip`, date: '2026-10-21' },
     ]);
+  });
+});
+
+describe('indexRows', () => {
+  it('reads due date, AMSC and set-aside from the line end, and skips lines that do not fit', () => {
+    // A real row of in261022.txt (140 characters; DIBBS ends lines with CRLF).
+    const row = `SPE1C127Q01008345001516486${' '.repeat(36)}701794650610/30/26SPE1C127Q0100.pdf  0002880EAFLAG,NATIONAL        DAW02G1Y100`;
+    expect(
+      indexRows(
+        `${row}\r\n${row.replace('10/30/26', '10/30/2X')}\r\nnot an index line\r\n`,
+      ),
+    ).toEqual(
+      new Map([
+        [
+          'SPE1C127Q0100',
+          { quoteDueDate: '2026-10-30', setAside: 'Y', amsc: 'G' },
+        ],
+      ]),
+    );
   });
 });

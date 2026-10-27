@@ -1,14 +1,13 @@
 {
   "name": "backend",
   "version": "0.0.1",
-  "description": "",
+  "description": "Open DLA Bid Core API: DIBBS ingest, RFQ parser and store",
   "author": "",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "type": "module",
   "scripts": {
     "build": "nest build",
-    "deploy": "nest deploy",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
@@ -19,7 +18,8 @@
     "test:watch": "vitest",
     "test:cov": "vitest run --coverage",
     "test:debug": "vitest --inspect-brk --no-file-parallelism",
-    "test:e2e": "vitest run --config ./vitest.config.e2e.ts"
+    "test:e2e": "vitest run --config ./vitest.config.e2e.ts",
+    "migration:generate": "nest build && typeorm migration:generate -d dist/data-source.js"
   },
   "dependencies": {
     "@nestjs/common": "^12.0.1",
@@ -29,13 +29,13 @@
     "@nestjs/schedule": "^12.0.2",
     "@nestjs/typeorm": "^12.0.2",
     "better-sqlite3": "^12.11.1",
+    "pdfjs-dist": "6.4.299",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
     "typeorm": "^1.1.2"
   },
   "devDependencies": {
     "@nestjs/cli": "^12.0.0",
-    "@nestjs/mau": "^0.2.6",
     "@nestjs/schematics": "^12.0.0",
     "@nestjs/testing": "^12.0.1",
     "@types/express": "^5.0.0",

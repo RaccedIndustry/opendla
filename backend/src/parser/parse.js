@@ -1,12 +1,17 @@
-// DLA RFQ PDF (Standard Form 18 + continuation sheets) -> JSON on stdout.
+// DLA RFQ PDF (Standard Form 18 + continuation sheets) -> JSON. M3 of docs/ARCHITECTURE.md.
 // Reads both DLA layouts: manual RFQs ("Q" numbers) and DIBBS automated / IDC RFQs ("T", "U" numbers).
-// macOS only; uses the built-in PDFKit, nothing to install.
-//   osascript -l JavaScript rfq2json.js /path/to/SPE1C127Q0018.pdf > SPE1C127Q0018.json
-// Whole folder, 8 at a time (a failed file leaves no .json and one line in errors.log):
-//   mkdir -p data/CA261022 && find ~/Desktop/CA261022 -name '*.pdf' -print0 | xargs -0 -P 8 -n 1 sh -c \
-//     'o="data/CA261022/$(basename "$1" .pdf).json"; osascript -l JavaScript rfq2json.js "$1" > "$o.tmp" 2>> data/CA261022/errors.log && mv "$o.tmp" "$o" || rm -f "$o.tmp"' sh
-ObjC.import('PDFKit');
-ObjC.import('AppKit');
+// Ported from the macOS-only rfq2json.js (PDFKit; see git history). New here: pdf.js page reading,
+// procurementHistory() and the SOURCE fix ("CAGE" before the code, spaced P/Ns); the set-aside tick check is gone,
+// the daily index has it. The rest is kept as it was checked against every RFQ of a DIBBS day, hence plain JS.
+//   node dist/parser/parse.js <out-dir> <pdf>...   one <name>.json per PDF; a failure is one stderr line
+import { readFile, writeFile } from 'node:fs/promises';
+import { basename, join } from 'node:path';
+import { setImmediate } from 'node:timers/promises';
+import { getDocument } from 'pdfjs-dist/legacy/build/pdf.mjs';
+/* eslint-disable no-useless-escape, no-sparse-arrays -- the ported parsing stays exactly as it was checked */
+
+/** Bump when the output changes, so stored rows say which parser wrote them. */
+export const PARSER_VERSION = 1;
 
 const MON = { JAN: 1, FEB: 2, MAR: 3, APR: 4, MAY: 5, JUN: 6, JUL: 7, AUG: 8, SEP: 9, OCT: 10, NOV: 11, DEC: 12 };
 const pad = n => String(n).padStart(2, '0');
@@ -32,20 +37,35 @@ const SECTION = /^SECTION ([A-Z])(?: - .*)?$/m;
 // Running header lines repeated on every continuation sheet.
 const HEADER = /^(CONTINUATION SHEET|REFERENCE NO\. OF DOCUMENT|CONTINUED ON NEXT PAGE|PAGE \d+ OF \d+ PAGES|[A-Z0-9]{6}-\d{2}-[A-Z]-[A-Z0-9]{4}$|(SUPPLY\/SERVICE|PR): .*CONT[’']D$)/;
 
-// Printed lines of a page with their position (y measured from the top of the page).
-function pageLines(page) {
-  const H = page.boundsForBox(0).size.height, sels = page.selectionForRect(page.boundsForBox(0)).selectionsByLine, out = [];
-  for (let i = 0; i < sels.count; i++) {
-    const s = sels.objectAtIndex(i), b = s.boundsForPage(page), text = s.string.js.trim();
-    if (text) out.push({ text, x: b.origin.x, top: H - b.origin.y - b.size.height, bottom: H - b.origin.y });
+// PDFKit's line box: one font size tall, this far below the baseline (measured per font family).
+const DESCENT = { monospace: 0.246, serif: 0.25, 'sans-serif': 0.23 };
+
+// Printed lines of a page in content order, with their position (y measured from the top of the page).
+// pdf.js hands out text runs. Runs on one baseline are one printed line, as in PDFKit, unless they are
+// separate boxes of the form: a wide gap with nothing (not even a space) between them, or, in tagged
+// PDFs (manual RFQs), a wide gap into another marked-content cell (a clause table's Number | Title | Date).
+async function pageLines(page) {
+  const H = page.view[3], { items, styles } = await page.getTextContent({ includeMarkedContent: true }), out = [];
+  let spaced = false, cell = 0;
+  for (const it of items) {
+    if (it.type) { if (it.type !== 'endMarkedContent') cell++; continue; }
+    if (!it.str.trim()) { spaced = true; continue; }
+    const [, , , size, x, y] = it.transform, l = out.at(-1), gap = x - l?.right;
+    const bottom = H - y + (DESCENT[styles[it.fontName]?.fontFamily] ?? 0.23) * size, top = bottom - size;
+    if (l && Math.abs(y - l.y) < 0.5 && gap > -1 && (spaced || gap < size / 2) && (cell === l.cell || gap < size * 0.3)) {
+      l.text += (gap > size / 10 ? ' ' : '') + it.str;
+      Object.assign(l, { right: x + it.width, top: Math.min(l.top, top), bottom: Math.max(l.bottom, bottom), cell });
+    } else out.push({ text: it.str, x, right: x + it.width, y, top, bottom, cell });
+    spaced = false;
   }
+  for (const l of out) l.text = l.text.replace(/\s+/g, ' ').trim();
   return out;
 }
 
 // Page text, one printed line per line, with a blank line wherever the page leaves a vertical gap.
 // DIBBS prints Section A double-spaced: there a one-line gap is still inside the paragraph.
-function pageText(page) {
-  const L = pageLines(page).filter(l => !HEADER.test(l.text));
+function pageText(lines) {
+  const L = lines.filter(l => !HEADER.test(l.text));
   const gap = i => L[i].top - L[i - 1].bottom, h = i => L[i].bottom - L[i].top;
   let tight = 0, loose = 0;
   for (let i = 1; i < L.length; i++) if (Math.abs(gap(i)) < 2) tight++; else if (Math.abs(gap(i) - h(i)) < 2) loose++;
@@ -59,8 +79,7 @@ function pageText(page) {
 
 // Page 1 is a fixed form: read each block from where it sits below its label, because the two
 // DLA generators emit the same page in different text orders (value-then-label vs label-then-value).
-function page1(page) {
-  const L = pageLines(page);
+function page1(L) {
   const at = re => { const l = L.find(x => re.test(x.text)); must(l, `page 1 label ${re.source}`); return l; };
   const box = (x0, x1, top, bottom) => L.filter(l => l.x >= x0 && l.x < x1 && l.top > top + 2 && l.top < bottom)
     .sort((a, b) => a.top - b.top || a.x - b.x).map(l => l.text);
@@ -87,31 +106,6 @@ function page1(page) {
   };
 }
 
-// SF 18 tick boxes are drawn lines, not text: render page 1 and look inside the box left of each label.
-function setAside(page) {
-  const text = page.string.js, at = text.indexOf('THIS RFQ IS IS NOT');
-  must(at >= 0, 'set-aside block');
-  const pb = page.boundsForBox(0);
-  const img = page.thumbnailOfSizeForBox({ width: pb.size.width * 4, height: pb.size.height * 4 }, 0);
-  const bmp = $.NSBitmapImageRep.imageRepWithData(img.TIFFRepresentation), k = bmp.pixelsWide / pb.size.width;
-  const dark = (x, y) => {
-    const c = bmp.colorAtXY(Math.round((x - pb.origin.x) * k), Math.round((pb.origin.y + pb.size.height - y) * k))
-      .colorUsingColorSpace($.NSColorSpace.deviceRGBColorSpace);
-    return c.alphaComponent > 0.5 && c.redComponent + c.greenComponent + c.blueComponent < 1.5;
-  };
-  const ticked = (start, length) => {
-    const r = page.selectionForRange({ location: start, length }).boundsForPage(page);
-    const y = r.origin.y + r.size.height / 2;
-    let x = r.origin.x - 1;
-    while (!dark(x, y)) { x -= 0.25; must(x > r.origin.x - 20, 'set-aside checkbox'); } // walk left to the box edge
-    for (let i = x - 8; i < x - 2; i += 0.25) if (dark(i, y)) return true;             // ink inside = the X
-    return false;
-  };
-  const is = ticked(at + 9, 2), isNot = ticked(at + 12, 6); // "THIS RFQ [ ] IS [ ] IS NOT"
-  must(is !== isNot, 'set-aside checkbox (expected exactly one ticked)');
-  return is;
-}
-
 const COUNTRY = /^[A-Z]{2,3}$/; // last address line: "US", "USA", "DE", "KR"
 function address(block, extra) {
   const lines = block.split('\n'), country = lines.length > 1 && COUNTRY.test(lines.at(-1)) ? lines.at(-1) : null;
@@ -121,7 +115,8 @@ function address(block, extra) {
 }
 
 const CODE = /^([RI][A-Z]\d{3})[,:]\s*/;                          // DLA tech/quality codes: RA001, RD002, IP056, ...
-const SOURCE = /^(.+) ((?=[A-Z0-9]*\d)[A-Z0-9]{5}) P\/N (\S+)$/;  // "SPS TECHNOLOGIES, LLC 56878 P/N 5893927-59"
+// "SPS TECHNOLOGIES, LLC 56878 P/N 5893927-59"; some print "CAGE" before the code, and a P/N may hold spaces.
+const SOURCE = /^(.+?)(?: CAGE)? ((?=[A-Z0-9]*\d)[A-Z0-9]{5}) P\/N (.+)$/;
 const ADDRESSES = { parcel_post: 'PARCEL POST ADDRESS:', freight: 'FREIGHT SHIPPING ADDRESS:',
   bulk_break_point: 'BULK BREAK POINT:', freight_forwarder: 'FREIGHT FORWARDER:', mark_for: 'MARKFOR' };
 const FIELD = /^(PRICING TERMS|QTY VARIANCE|INSPECTION POINT|ACCEPTANCE POINT|FOB|DELIVER FOB|DELIVERY \(IN DAYS\)|NSN\/MATERIAL|Need Ship Date|Original Required Delivery Date|PREP FOR DELIVERY):/;
@@ -279,15 +274,55 @@ function clauses(section, text) {
   return out;
 }
 
-function convert(path) {
-  const doc = $.PDFDocument.alloc.initWithURL($.NSURL.fileURLWithPath(path ?? ''));
-  must(path && !doc.isNil(), 'PDF');
-  const page = doc.pageAtIndex(0), f = page1(page);
+// DIBBS prints the NSN's past awards as a table among the notes: a "Procurement History for NSN/FSC:<NIIN>/<FSC>"
+// header, the column titles, then rows "<CAGE> <contract> <qty> <unit price> <yyyymmdd> <surplus Y/N>". The header
+// repeats after a page break, and the last rows can run into the next paragraph, which stays a note.
+const PH_HEAD = /^Procurement History for NSN\/FSC:([A-Z0-9]{9})\/(\d{4})\s*/; // NIIN or a local "LL..." number
+const PH_COLS = /^(?:CAGE Contract Number Quantity Unit Cost AWD Date Surplus Material)?\s*\.?\s*/;
+const PH_ROW = /^(NOT FO|[A-Z0-9]{5,6})(?: (\S+))? (\d[\d.]*) (\d[\d.]*) (\d{4})(\d\d)(\d\d) ([YN])(?: |$)/; // NOT FO: no CAGE
+
+/** Splits the procurement history rows out of the notes. */
+export function procurementHistory(notes) {
+  const history = [], rest = [];
+  let nsnOf = null;
+  for (let note of notes) {
+    const head = note.match(PH_HEAD);
+    if (head) [nsnOf, note] = [nsn(head[2] + head[1]), note.slice(head[0].length)];
+    if (nsnOf) {
+      note = note.replace(PH_COLS, '');
+      for (let m; (m = note.match(PH_ROW)); note = note.slice(m[0].length))
+        history.push({
+          nsn: nsnOf, cage: m[1] === 'NOT FO' ? null : m[1], contract: m[2] ?? null,
+          quantity: +m[3], unit_price: +m[4], award_date: `${m[5]}-${m[6]}-${m[7]}`, surplus: m[8] === 'Y',
+        });
+      if (!note) continue;
+      nsnOf = null; // any other text ends the table
+    }
+    rest.push(note);
+  }
+  return { history, notes: rest };
+}
+
+/** One RFQ PDF to its JSON. Throws "could not parse ..." rather than return partial data. */
+export async function parseRfq(bytes, sourceFile) {
+  const task = getDocument({ data: new Uint8Array(bytes), isEvalSupported: false, verbosity: 0 });
+  try {
+    return await convert(await task.promise, sourceFile);
+  } finally {
+    await task.destroy();
+  }
+}
+
+async function convert(doc, sourceFile) {
+  const page = await pageLines(await doc.getPage(1)), f = page1(page);
   must(SOL.test(f.number ?? '') && DAY.test(f.issued ?? '') && f.due, 'page 1 header');
 
   // Pages 2+: front matter, then sections A..M (a section continued on later pages is merged).
   const pages = [];
-  for (let i = 1; i < doc.pageCount; i++) pages.push(pageText(doc.pageAtIndex(i)));
+  for (let i = 2; i <= doc.numPages; i++) {
+    await setImmediate(); // one page at a time, so the API keeps answering during a day's parse
+    pages.push(pageText(await pageLines(await doc.getPage(i))));
+  }
   const body = pages.join('\n\n');
   const [front, ...split] = body.split(SECTION);
   const sec = {};
@@ -310,17 +345,18 @@ function convert(path) {
   if (/location specified below/i.test(faAt ?? ''))
     faAt = F.match(/for first article tests\.? (.+?) within \d+ calendar days after the Government receives/i)?.[1] ?? faAt;
 
-  return JSON.stringify({
-    source_file: path.split('/').pop(),
+  const { history, notes } = procurementHistory(
+    paras([front, sec.A].filter(Boolean).join('\n\n')).map(unwrap).filter(x => !/^[*\s]+$/.test(x)));
+  return {
+    source_file: sourceFile,
     solicitation: {
       number: f.number,
       issue_date: ymd(f.issued),
       quote_due_date: ymd(f.due),
       purchase_request: f.pr,
       dpas_rating: f.rating,
-      small_business_set_aside: setAside(page),
       naics: unwrap(body).match(/(?:NORTH AMERICAN INDUSTRY CLASSIFICATION SYSTEM|NAICS code)\s*[(\[]?(\d{6})/)?.[1] ?? null,
-      quote_validity_days: int(page.string.js.match(/valid for (\d+) days/)),
+      quote_validity_days: int(page.map(l => l.text).join('\n').match(/valid for (\d+) days/)),
     },
     issuing_office: address(f.office.join('\n')),
     buyer: f.buyer,
@@ -335,11 +371,25 @@ function convert(path) {
       ship_to: faAt,
     },
     warranty_months: int((sec.I ? unwrap(sec.I) : '').match(/warrants that for (\d+) months/)),
-    notes: paras([front, sec.A].filter(Boolean).join('\n\n')).map(unwrap).filter(x => !/^[*\s]+$/.test(x)),
+    notes,
+    procurement_history: history,
     clauses: Object.entries(sec).filter(([s]) => s !== 'A' && s !== 'B').flatMap(([s, t]) => clauses(s, t)),
-  }, null, 2);
+  };
 }
 
-function run([path]) {
-  try { return convert(path); } catch (e) { throw new Error(`${path}: ${e.message}`); }
+if (import.meta.main) {
+  const [out, ...files] = process.argv.slice(2), ms = [];
+  for (const file of files) {
+    const t = performance.now();
+    try {
+      const json = await parseRfq(await readFile(file), basename(file));
+      await writeFile(join(out, basename(file).replace(/\.pdf$/i, '.json')), JSON.stringify(json, null, 2));
+      ms.push(performance.now() - t);
+    } catch (e) {
+      process.exitCode = 1;
+      console.error(`${file}: ${e.message}`);
+    }
+  }
+  ms.sort((a, b) => a - b);
+  console.log(`${ms.length} PDFs, median ${Math.round(ms[ms.length >> 1] ?? 0)} ms, max ${Math.round(ms.at(-1) ?? 0)} ms`);
 }

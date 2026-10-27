@@ -1,12 +1,11 @@
 {
-  "source_file": "SPE1C127Q0018.pdf",
+  "source_file": "SPE1C127Q0100.pdf",
   "solicitation": {
-    "number": "SPE1C1-27-Q-0018",
+    "number": "SPE1C1-27-Q-0100",
     "issue_date": "2026-10-22",
-    "quote_due_date": "2026-10-29",
-    "purchase_request": "7018470621",
+    "quote_due_date": "2026-10-30",
+    "purchase_request": "7017946506",
     "dpas_rating": null,
-    "small_business_set_aside": false,
     "naics": null,
     "quote_validity_days": 90
   },
@@ -24,78 +23,80 @@
     "country": "USA"
   },
   "buyer": {
-    "name": "LAUREN BRADLEY",
-    "code": "DLB0138",
-    "phone": "8565080993",
+    "name": "ADRIENNE WECKESSER",
+    "code": "DAW0225",
+    "phone": "(445) 737-1815",
     "fax": null,
-    "email": "LAUREN.M.BRADLEY@DLA.MIL"
+    "email": "ADRIENNE.WECKESSER@DLA.MIL"
   },
   "items": [
     {
-      "pgc": "20616",
+      "pgc": "27796",
       "pr": null,
       "nsn": null,
-      "description": "INSIGNIA, RANK, OFFICER, JROTC; POLYESTER SERGE CADET COLONEL, LARGE BLACK, COLORASSN. SHADE 65018 BACKGROUND, SYNTHETIC METALLIC SILVER YARN CHEVRON, SIZE, SLIP-ON ATTACHMENT,EMBROIDERED ITEM, WORN ON SHOULDER LOOPS, TYPE V, SIZE 1, CLASS 1",
-      "reference_docs": [
-        {
-          "type": null,
-          "cage": null,
-          "number": "DD 22571 B-3-122",
-          "revision": null,
-          "date": "1988-09-13",
-          "part_number": null
-        },
-        {
-          "type": null,
-          "cage": null,
-          "number": "DD 22571B-3-122-6CARTOON",
-          "revision": null,
-          "date": "1987-10-22",
-          "part_number": null
-        }
-      ],
+      "description": "FLAG, NATIONAL UNITED STATES OF AMERICA, W/FRINGE, CORD & TASSELS HEAVYWEIGHT, NYLON BUNTING HOIST: 3FT FLY: 5FT 8-3/8IN HEADING:TYPE II . MADE IAW DRAWING 5-1-17 MADE IAW SPECIFICATION DDD-F-416",
+      "reference_docs": [],
       "approved_sources": [],
       "requirement_codes": [
-        {
-          "code": "RD003",
-          "text": "COVERED DEFENSE INFORMATION POTENTIALLY APPLIES"
-        },
-        {
-          "code": "RA001",
-          "text": "THIS DOCUMENT INCORPORATES TECHNICALAND/OR QUALITY REQUIREMENTS (IDENTIFIED BY AN 'R' OR AN 'I' NUMBER) SET FORTH IN FULL TEXT IN THE DLA MASTER LIST OF TECHNICAL ANDQUALITY REQUIREMENTS FOUND ON THE WEB AT:"
-        },
         {
           "code": "RP001",
           "text": "DLA PACKAGING REQUIREMENTS FOR PROCUREMENT"
         },
         {
+          "code": "RA001",
+          "text": "THISDOCUMENT INCORPORATES TECHNICAL AND/OR QUALITY REQUIREMENTS (IDENTIFIED BY AN 'R' OR AN 'I' NUMBER) SET FORTH IN FULL TEXT IN THEDLA MASTER LIST OF TECHNICAL AND QUALITY REQUIREMENTS FOUND ON THE WEBAT:"
+        },
+        {
           "code": "RQ011",
-          "text": "REMOVAL OF GOVERNMENTIDENTIFICATION FROM NON-ACCEPTED SUPPLIES"
+          "text": "REMOVAL OF GOVERNMENT IDENTIFICATION FROM NON-ACCEPTED SUPPLIES"
+        },
+        {
+          "code": "RD003",
+          "text": "COVERED DEFENSE INFORMATION POTENTIALLYAPPLIES"
+        },
+        {
+          "code": "RQ001",
+          "text": "TAILORED HIGHER LEVEL CONTRACT QUALITY REQUIREMENTS (MANUFACTURERS AND NON-MANUFACTURERS)"
+        },
+        {
+          "code": "RQ018",
+          "text": "CONTRACTOR RETENTION OF SUPPLY CHAIN TRACEABILITY DOCUMENTATION (AUG 2016) This item requires supply chain traceability documentation in accordance with DLA Directive (DLAD) Procurement Notes #C03 Contractor Retention of Supply ChainTraceability Documentation (AUG 2016)#. The full text of C03 can be found in the DLAD Procurement Notes on the Web at:http://www.dla.mil/HQ/Acquisition/Offers/eProcurement.aspx. (End of TQ Requirement)"
+        },
+        {
+          "code": "IP056",
+          "text": "MERCURY OR MERCURY COMPOUNDS AREPROHIBITED IN PRESERVATION, PACKAGING, PACKING AND MARKING."
+        },
+        {
+          "code": "RD003",
+          "text": "COVERED DEFENSE INFORMATION POTENTIALLY APPLIES"
         }
       ],
       "notes": [
         "http://www.dla.mil/HQ/Acquisition/Offers/eProcurement.aspx",
-        "FOR SIMPLIFIED ACQUISITIONS,THE REVISION OF THE MASTER IN EFFECT ON THE SOLICITATION ISSUE DATE OR THE AWARD DATE CONTROLS. FOR LARGE ACQUISITIONS, THEREVISION OF THE MASTER IN EFFECT ON THE RFP ISSUE DATE APPLIES UNLESS A SOLICITATION AMENDMENT INCORPORATES A FOLLOW-ON REVISION, IN WHICH CASE THE AMENDMENT DATE CONTROLS.",
-        "INSPECTION OF SUPPLIES SHALL BE IN ACCORDANCE WITH FAR PART 52.246-2 STANDARDINSPECTION.",
+        "FOR SIMPLIFIED ACQUISITIONS, THE REVISION OF THE MASTER IN EFFECTON THE SOLICITATION ISSUE DATE OR THE AWARD DATE CONTROLS. FOR LARGE ACQUISITIONS, THE REVISION OF THE MASTER IN EFFECT ON THE RFPISSUE DATE APPLIES UNLESS A SOLICITATION AMENDMENT INCORPORATES A FOLLOW-ON REVISION, IN WHICH CASE THE AMENDMENT DATECONTROLS.",
+        "INSPECTION AND ACCEPTANCE AT DESTINATION.",
+        ". INSPECTION OF SUPPLIES SHALL BE IN ACCORDANCE WITH FAR PART 52.246-2STANDARD INSPECTION.",
         "ADDITIONAL INFORMATION FOR MIL-STD-105E:",
         "MIL-STD-105E, dated 10 May 1989, is hereby canceled.",
-        "Future acquisitions may refer to: MIL-STD-1916, \"DoD Preferred Methods for Acceptance of Product,\" or ANSI/ASQ Z1.4, \"Sampling Procedures and Tables forInspection by Attributes.\"",
-        "Users are cautioned to evaluate these documents for their particular application before citing it as areplacement document.",
-        "(Copies of MIL-STD-1916 are available online at http://assist.daps.dla.mil or from the StandardizationDocument Order Desk, 700 Robbins Avenue, Building 4D, Philadelphia, PA 19111-5094.)",
-        "(Copies of ANSI/ASQ Z1.4 are available onlineat www.asq.org or ASQ Distribution Center, 5131 S. Third Street, Milwaukee, Wisconsin 53207-6028.)",
-        "ADDITIONAL INFORMATION FORANSI/ASQC Z1.4: NOTE: THE MOST RECENT VERSION OF THIS DOCUMENT SHOULD BE USED. APPLICATION FOR COPIES SHOULD BE ADDRESSEDTO: AMERICAN SOCIETY FOR QUALITY 600 NORTH PLANKINTON AVENUE MILWAUKEE, WISCONSIN 53203",
-        "(Ref. T0795 - May 17, 2006)",
-        "FIVE (5) FIRST ARTICLE SAMPLES ARE REQUIRED. FIRST ARTICLE TESTING SHALL BE PERFORMED AND THE CONTRACTOR WILL BE NOTIFIED IN WRITING WITHIN THIRTY (30) CALENDAR DAYS AFTER CONTRACTING OFFICER'S RECEIPT OF FIRST ARTICLE SAMPLES.",
+        "Futureacquisitions may refer to: MIL-STD-1916, \"DoD Preferred Methods for Acceptance of Product,\" or ANSI/ASQ Z1.4, \"Sampling Proceduresand Tables for Inspection by Attributes.\"",
+        "Users are cautioned to evaluate these documents for their particular application beforeciting it as a replacement document.",
+        "(Copies of MIL-STD-1916 are available online at http://assist.daps.dla.mil or from theStandardization Document Order Desk, 700 Robbins Avenue, Building 4D, Philadelphia, PA 19111-5094.)",
+        "(Copies of ANSI/ASQ Z1.4 areavailable online at www.asq.org or ASQ Distribution Center, 5131 S. Third Street, Milwaukee, Wisconsin 53207-6028.)",
+        "ADDITIONALINFORMATION FOR ANSI/ASQC Z1.4: NOTE: THE MOST RECENT VERSION OF THIS DOCUMENT SHOULD BE USED. APPLICATION FOR COPIES SHOULD BEADDRESSED TO: AMERICAN SOCIETY FOR QUALITY 600 NORTH PLANKINTON AVENUE MILWAUKEE, WISCONSIN 53203",
+        "(Ref. T0795 - May 17, 2006) Two(2) First Article samples are required. First Article Testing shall be performed and the contractor will be notified in writingwithin thirty (30) calendar days after Contracting Officer's receipt of First Article samples.",
+        "IT IS RECOMMENDED THAT TWO EACHFIRST ARTICLE SAMPLES OF THE END ITEM(S) BE SUBMITTED TO THIS CENTER FOR VISUAL, DIMENSIONAL AND SHADE EXAMINATIONS. THIRTY DAYSWILL BE REQUIRED TO EXAMINE AND EVALUATE THE SAMPLES AND TO FURNISH THE RESULTS AND DIRECTIONS REGARDING PRODUCTION TO THECONTRACTOR.",
+        "MERCURY OR MERCURY CONTAINING COMPOUNDS SHALL NOT BE INTENTIONALLY ADDED TO, OR COME IN DIRECT CONTACT WITH, ANYHARDWARE OR SUPPLIES FURNISHED UNDER THIS CONTRACT. EXCEPTION: FUNCTIONAL MERCURY USED IN BATTERIES, FLUORESCENT LIGHTS,REQUIRED INSTRUMENTS; SENSORS OR CONTROLS; WEAPON SYSTEMS; AND CHEMICAL ANALYSIS REAGENTS SPECIFIED BY NAVSEA.",
+        "PORTABLE FLUORESCENTLAMPS AND PORTABLE INSTRUMENTS CONTAINING MERCURY SHALL BE SHOCK PROOF AND CONTAIN A SECOND BOUNDARY OF CONTAINMENT OF THE MERCURYOR MERCURY COMPOUND. (IAW NAVSEA 5100-003D).",
         "DLA issues this document using the DoD authorized unit of issue, please refer to the following URL to determine the corresponding ANSI X12 unit of issue.",
         "https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fwww.dla.mil%2FPortals%2F104%2FDocuments%2FDLMS%2FeApplications%2FLogDataAdmin%2FUnit_of_Issue_and_Purchase_Unit.xlsx&wdOrigin=BROWSELINK"
       ],
       "clins": [
         {
           "clin": "0001",
-          "nsn": "8455-01-271-3097",
-          "nomenclature": "INSIGNIA,RANK,OFFICER",
-          "quantity": 1000,
-          "unit": "PR",
+          "nsn": "8345-00-151-6486",
+          "nomenclature": "FLAG,NATIONAL",
+          "quantity": 2880,
+          "unit": "EA",
           "pricing_terms": "Firm Fixed Price",
           "qty_variance_pct": {
             "plus": 0,
@@ -104,37 +105,30 @@
           "inspection_point": "DESTINATION",
           "acceptance_point": "DESTINATION",
           "fob": "DESTINATION",
-          "delivery_days_ado": 120,
-          "rdd": "2027-05-28",
+          "delivery_days_ado": 230,
+          "rdd": "2027-01-18",
           "need_ship_date": null,
-          "pr": "7018470621",
+          "pr": "7017946506",
           "prli": "0001",
           "packaging": {
             "standard": "MIL-STD-2073-1E",
             "codes": {
               "QUP": "001",
               "PRES MTHD": "10",
-              "CLNG/DRY": "0",
+              "CLNG/DRY": "1",
               "PRESV MAT": "00",
-              "WRAP MAT": "00",
-              "CUSH/DUNN MAT": "00",
-              "CUSH/DUNNTHKNESS": "0",
+              "WRAP MAT": "ZZ",
+              "CUSH/DUNN MAT": "ZZ",
+              "CUSH/DUNNTHKNESS": "C",
               "UNIT CONT": "ZZ",
               "OPI": "O",
               "INTRMDTE CONT": "ZZ",
-              "INTRMDTE CONT QTY": "ZZZ",
-              "PACK CODE": "Q",
-              "PACKING LEVEL": "B",
+              "INTRMDTE CONT QTY": "XXX",
+              "PACK CODE": "U",
               "SPECIAL MARKING CODE": "00"
             },
             "instructions": [
-              "PRES/PACK LEVELS SHALL BE A/C IN ACCORDANCE WITH MIL-I-14647. QUANTITY UNIT PACK SHALL BE IN ACCORDANCE WITH MIL-I-14647 UNIT PACKAGING:",
-              "A PAIR SHALL BE IN PLASTIC BAG. TEN (10) PAIR OFMARKS, OF ONE KIND ONLY, SHALL BE PRESERVED IN A SNUG FITTING FLAT STYLE POLYETHYLENE BAG. THE OPEN END OF BAG SHALL BE FOLDE OVERTAPE OR HEATED SEAL.",
-              "IN A SET-UP BOX. SIXTY (60) PAIR OF MARKS (6 BAGS OF TEN PAIRS), OF ONE KIND ONLY, SHALL BE PRESERVED",
-              "LABEL:EACH PAIR AND BAG SHALL BE LABEL AS THE FOLLOWING",
-              "Bar Code: NSN: Item Name: Quantity Unit Pack: Contract Number:",
-              "Packing. LevelA/B",
-              "FIFTEEN (15) SET-UP BOXES OF ONE KIND ONLY, SHALL BE PACKED IN A FIBERBOARD SHIPPING CONTAINER AS CITED ON SECTION 5.2.1."
+              "PRES/PACK LEVELS A/COMMERICAL TO DDD-F-416. QUP SHALL BE IAW DDD-F-416. LOT NUMBERING SHALL BE IN ACCORDANCE WITH MIL-STD-129 AND DSCP 4155.3. ."
             ]
           },
           "ship_to": {
@@ -177,42 +171,25 @@
   ],
   "first_article": {
     "testing": "GOVERNMENT",
-    "quantity": 5,
-    "lot_item": "8455012713097",
+    "quantity": 2,
+    "lot_item": "8345001516486",
     "due_days_after_award": 30,
     "govt_decision_days": 30,
-    "ship_to": "DLA Troop Support 700 Robbins Avenue Philadelphia, PA 19111 C&T Building 3/ Bay A/ Work station 4065 Attention: Lauren Bradley"
+    "ship_to": "DLA Troop Support 700 Robbins Ave. Philadelphia, PA 19111 Attn: Adrienne Weckesser Bldg. 3 / Station 5054"
   },
-  "warranty_months": 12,
+  "warranty_months": null,
   "notes": [
-    "THE PURCHASE ORDER CLAUSES ARE APPLICABLE AS INDICATED IN THE DLA MASTER SOLICITATION FOR EPROCUREMENT AUTOMATED SIMPLIFIED ACQUISITIONS (PART 13) REVISION 105 (May 20, 2026) WHICH CAN BE FOUND ON THE WEB AT:",
-    "https://www.dla.mil/Portals/105/Documents/J7Acquisition/MasterSolicitation4ASAcqRev-105 May 20, 2026.pdf",
-    "This solicitation/award includes domestic preference requirements as identified in the Berry Amendment. Offers are cautioned that ALL components must be of domestic origin in compliance with clause 252.225-7012, Preference for Certain Domestic Commodities (DEC 2017) as contained in Section I of this",
-    "As part of the United States Defense Industrial Base, offerors are strongly encouraged to develop pricing that adequately accounts for market risk and volatility, includes sufficient margins to withstand future unforeseen contingencies, and allows for long term viability. Offerors are advised to refrain from submitting any offers or bids with the anticipation that in the event costs increase that there may be a price adjustment and/or cancellation of the contract. Offers are reminded that the awardee is expected to, and will be contractually bound to, perform at the final pricing submitted for the duration of the contract performance period(s) established in this solicitation. The successful performance of your contract is critical to the continued support of our nation’s warfighters.",
-    "*FAR 52.248-01, Alt III Value Engineering is applicable to this award.",
-    "*Five (5) first articles are due 30 days after date of award.",
-    "Submit Samples to:",
-    "DLA Troop Support",
-    "700 Robbins Ave.",
-    "Philadelphia, PA 19111",
-    "Attn: Lauren Bradley",
-    "Bay A/ Bldg. 3 / WK Station 4065",
-    "Note: The government reserves the right to cancel the order if first article samples are not received 30 days after award or in the event of First Article Failure. Repeated First Article failure may result in termination for default.",
-    "*The Quality Standards of DPSCM 4155.3 apply to this acquisition",
-    "CAUTION NOTICE - CONTRACTOR CODE OF BUSINESS ETHICS (FEB 2012)",
-    "FAR Part 3.1002(a) requires all government contractors to conduct themselves with the highest degree of integrity and honesty. Contractors should have a written code of business ethics and conduct within thirty days of award. To promote compliance with such code of business ethics and conduct, contractors should have an employee business ethics and compliance training program that facilitates timely discovery and disclosure of improper conduct in connection with government contracts and ensures corrective measures are promptly instituted and carried out. A contractor may be suspended and/or debarred for knowing failure by a principal to timely disclose to the government, in connection with the award, performance, or closeout of a government contract performed by the contractor or a subcontract awarded there under, credible evidence of a violation of federal criminal law involving fraud, conflict of interest, bribery, or gratuity violations found in title 18 of the United States Code or a violation of the False Claims Act. (31 U.S.C. 3729-3733)",
-    "If this solicitation or contract includes FAR clause 52.203-13",
-    "- CONTRACTOR CODE OF BUSINESS ETHICS AND CONDUCT; the contractor shall comply with the terms of the clause and have a written code of business ethics and conduct; exercise due diligence to prevent and detect criminal conduct; promote ethical conduct and a commitment to compliance with the law within their organization; and timely report any violations of federal criminal law involving fraud, conflict of interest, bribery or gratuity violations found in title 18 of the United States Code or any violations of the False Claims Act. (31 U.S.C. 3729-3733) When FAR 52.203-13 is included in the contract, contractors must provide a copy of its written code of business ethics and conduct to the contracting officer upon request by the contracting officer.",
-    "CAUTION NOTICE – PATIENT PROTECTION AND AFFORDABLE HEALTH CARE ACT:",
-    "Please note that the Patient Protection and Affordable Health Care Act (\"the Act\"), 124 Stat. 119, imposes duties upon employers concerning the provision of health care to their employees. Health insurance costs, including any costs associated with compliance with changes in the applicable law, are the sole responsibility of the offeror. Offerors are advised that their proposals should include any costs associated with the implementation of the Act. Any changes in health coverage costs and/or costs associated with compliance, occurring after award of a contract pursuant to this solicitation will not form the basis for an equitable adjustment of the contract price.",
-    "CAUTION NOTICE – E-VERIFY:",
-    "Pursuant to FAR clause 52.222-54 vendors are required to enroll in the E-Verify program within thirty days after the date of a contract award and comply with all terms of the clause. In addition, vendors are required to provide evidence of their enrollment in the E-verify program to the contracting officer within 30 days after the date of a contract award.",
-    "*VIM-ASAP is the ONLY authorized method to electronically process requests for payment to WAWF-RA.",
+    "THIS SOLICITATION INCORPORATES THE TERMS AND CONDITIONS SET FORTH IN THE DLA MASTER SOLICITATION FOR EPROCUREMENT AUTOMATED SIMPLIFIED ACQUISITIONS (PART 13) REVISION 105 (May 20, 2026) WHICH CAN BE FOUND ON THE WEB AT: https://www.dla.mil/Portals/104/Documents/J7Acquisition/MasterSolicitation4ASAcqRev-105_May 20, 2026.pdf This solicitation/award includes domestic preference requirements as identified in the Berry Amendment. Offers are cautioned that ALL components must be of domestic origin in compliance with clause 252.225-7012, Preference for Certain Domestic Commodities (DEC 2017) as contained in Section I of this As part of the United States Defense Industrial Base, offerors are strongly encouraged to develop pricing that adequately accounts for market risk and volatility, includes sufficient margins to withstand future unforeseen contingencies, and allows for long term viability. Offerors are advised to refrain from submitting any offers or bids with the anticipation that in the event costs increase that there may be a price adjustment and/or cancellation of the contract. Offers are reminded that the awardee is expected to, and will be contractually bound to, perform at the final pricing submitted for the duration of the contract performance period(s) established in this solicitation. The successful performance of your contract is critical to the continued support of our nation’s warfighters. *FAR 52.248-01, Alt III Value Engineering is applicable to this award.",
+    "*Two (2) first articles are due 30 days after date of award. Submit Samples to: DLA Troop Support 700 Robbins Ave. Philadelphia, PA 19111 Attn: Adrienne Weckesser Bldg. 3 / Station 5054",
+    "Note: The government reserves the right to cancel the order if first article samples are not received 30 days after award or in the event of First Article Failure. Repeated First Article failure may result in termination for default. *The Quality Standards of DPSCM 4155.3 apply to this acquisition CAUTION NOTICE - CONTRACTOR CODE OF BUSINESS ETHICS (FEB 2012) FAR Part 3.1002(a) requires all government contractors to conduct themselves with the highest degree of integrity and honesty. Contractors should have a written code of business ethics and conduct within thirty days of award. To promote compliance with such code of business ethics and conduct, contractors should have an employee business ethics and compliance training program that facilitates timely discovery and disclosure of improper conduct in connection with government contracts and ensures corrective measures are promptly instituted and carried out. A contractor may be suspended and/or debarred for knowing failure by a principal to timely disclose to the government, in connection with the award, performance, or closeout of a government contract performed by the contractor or a subcontract awarded there under, credible evidence of a violation of federal criminal law involving fraud, conflict of interest, bribery, or gratuity violations found in title 18 of the United States Code or a violation of the False Claims Act. (31 U.S.C. 3729-3733)",
+    "If this solicitation or contract includes FAR clause 52.203-13 - CONTRACTOR CODE OF BUSINESS ETHICS AND CONDUCT; the contractor shall comply with the terms of the clause and have a written code of business ethics and conduct; exercise due diligence to prevent and detect criminal conduct; promote ethical conduct and a commitment to compliance with the law within their organization; and timely report any violations of federal criminal law involving fraud, conflict of interest, bribery or gratuity violations found in title 18 of the United States Code or any violations of the False Claims Act. (31 U.S.C. 3729-3733) When FAR 52.203-13 is included in the contract, contractors must provide a copy of its written code of business ethics and conduct to the contracting officer upon request by the contracting officer.",
+    "CAUTION NOTICE – PATIENT PROTECTION AND AFFORDABLE HEALTH CARE ACT: Please note that the Patient Protection and Affordable Health Care Act (\"the Act\"), 124 Stat. 119, imposes duties upon employers concerning the provision of health care to their employees. Health insurance costs, including any costs associated with compliance with changes in the applicable law, are the sole responsibility of the offeror. Offerors are advised that their proposals should include any costs associated with the implementation of the Act. Any changes in health coverage costs and/or costs associated with compliance, occurring after award of a contract pursuant to this solicitation will not form the basis for an equitable adjustment of the contract price.",
+    "CAUTION NOTICE – E-VERIFY: Pursuant to FAR clause 52.222-54 vendors are required to enroll in the E-Verify program within thirty days after the date of a contract award and comply with all terms of the clause. In addition, vendors are required to provide evidence of their enrollment in the E-verify program to the contracting officer within 30 days after the date of a contract award. ****************************************************************************************** *VIM-ASAP is the ONLY authorized method to electronically process requests for payment to WAWF-RA.",
     "*YOU MUST REGISTER IN VIM TO INVOICE ELECTRONICALLY",
-    "*If you are not registered to access VIM please go to vim.dla.mil and contact the VIM helpdesk desk at VIMSUPPORT@dla.mil",
-    "*In order to be considered for this award bidder must provide an end product manufactured by a vendor certified by The Institute of Heraldry (TIOH) and listed on the The Institute of Heraldry certified manufacturer list. The current list is found here: http://www.tioh.hqda.pentagon.mil/Catalog/VendorList.aspx.",
+    "*If you are not registered to access VIM please go to vim.dla.mil and contact the VIM helpdesk desk at VIMSUPPORT@dla.mil *In order to be considered for this award bidder must provide an end product manufactured by a vendor certified by The Institute of Heraldry (TIOH) and listed on the The Institute of Heraldry certified manufacturer list. The current list is found here: http://www.tioh.hqda.pentagon.mil/Catalog/VendorList.aspx.",
     "*Please following directions listed here http://www.tioh.hqda.pentagon.mil/Content/docs/Contact-Us_Final.pdf to inquire about becoming a TIOH Certified Manufacturer."
   ],
+  "procurement_history": [],
   "clauses": [
     {
       "section": "C",
@@ -277,14 +254,15 @@
     {
       "section": "H",
       "number": "H18",
-      "title": "DEFENSE PRIORITIES AND ALLOCATIONS SYSTEM (DPAS) RATED AWARDS",
-      "date": "FEB 2025"
+      "title": "DEFENSE PRIORITIES AND ALLOCATIONS SYSTEM (DPAS)",
+      "date": "JUL 2026"
     },
     {
       "section": "I",
       "number": "252.201-7000",
       "title": "CONTRACTING OFFICER'S REPRESENTATIVE",
-      "date": "DEC 1991"
+      "date": "AUG 2026",
+      "deviation": "2026-O0002"
     },
     {
       "section": "I",
@@ -354,6 +332,19 @@
     },
     {
       "section": "I",
+      "number": "52.209-6",
+      "title": "PROTECTING THE GOVERNMENT'S INTEREST WHEN SUBCONTRACTING WITH CONTRACTORS DEBARRED, SUSPENDED, PROPOSED FOR DEBARMENT, OR VOLUNTARILY EXCLUDED",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "I",
+      "number": "252.209-7004",
+      "title": "SUBCONTRACTING WITH FIRMS THAT ARE OWNED OR CONTROLLED BY THE GOVERNMENT OF A COUNTRY THAT IS A STATE SPONSOR OF TERRORISM",
+      "date": "MAY 2019"
+    },
+    {
+      "section": "I",
       "number": "52.211-5",
       "title": "MATERIAL REQUIREMENTS",
       "date": "FEB 2026",
@@ -368,9 +359,24 @@
     },
     {
       "section": "I",
-      "number": "252.219-7000",
-      "title": "ADVANCING SMALL BUSINESS GROWTH",
-      "date": "JUN 2023"
+      "number": "52.222-19",
+      "title": "CHILD LABOR - COOPERATION WITH AUTHORITIES AND REMEDIES",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "I",
+      "number": "52.222-35",
+      "title": "EQUAL OPPORTUNITY FOR VETERANS",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "I",
+      "number": "52.222-36",
+      "title": "EQUAL OPPORTUNITY FOR WORKERS WITH DISABILITIES",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
     },
     {
       "section": "I",
@@ -388,6 +394,13 @@
     },
     {
       "section": "I",
+      "number": "52.222-90",
+      "title": "ADDRESSING DEI DISCRIMINATION BY FEDERAL CONTRACTORS",
+      "date": "APR 2026",
+      "deviation": "2026-O0040, REVISION 1"
+    },
+    {
+      "section": "I",
       "number": "52.223-23",
       "title": "SUSTAINABLE PRODUCTS",
       "date": "FEB 2026",
@@ -401,9 +414,46 @@
     },
     {
       "section": "I",
+      "number": "252.225-7001",
+      "title": "BUY AMERICAN AND BALANCE OF PAYMENTS PROGRAM",
+      "date": "FEB 2024"
+    },
+    {
+      "section": "I",
+      "number": "252.225-7001",
+      "title": "BUY AMERICAN AND BALANCE OF PAYMENTS PROGRAM",
+      "date": "FEB 2024",
+      "alt": "II"
+    },
+    {
+      "section": "I",
+      "number": "252.225-7002",
+      "title": "QUALIFYING COUNTRY SOURCES AS SUBCONTRACTORS",
+      "date": "MAR 2022"
+    },
+    {
+      "section": "I",
+      "number": "252.225-7006",
+      "title": "ACQUISITION OF THE AMERICAN FLAG",
+      "date": "DEC 2022"
+    },
+    {
+      "section": "I",
+      "number": "252.225-7012",
+      "title": "PREFERENCE FOR CERTAIN DOMESTIC COMMODITIES",
+      "date": "APR 2022"
+    },
+    {
+      "section": "I",
       "number": "252.225-7013",
       "title": "DUTY-FREE ENTRY",
       "date": "OCT 2025"
+    },
+    {
+      "section": "I",
+      "number": "252.225-7015",
+      "title": "RESTRICTION ON ACQUISITION OF HAND OR MEASURING TOOLS",
+      "date": "JUN 2005"
     },
     {
       "section": "I",
@@ -419,9 +469,9 @@
     },
     {
       "section": "I",
-      "number": "252.225-7052",
-      "title": "RESTRICTION ON THE ACQUISITION OF CERTAIN MAGNETS, TANTALUM, AND TUNGSTEN",
-      "date": "MAY 2024"
+      "number": "252.225-7060",
+      "title": "PROHIBITION ON CERTAIN PROCUREMENTS FROM THE XINJIANG UYGHUR AUTONOMOUS REGION",
+      "date": "JUN 2023"
     },
     {
       "section": "I",
@@ -473,6 +523,12 @@
     },
     {
       "section": "I",
+      "number": "252.232-7010",
+      "title": "LEVIES ON CONTRACT PAYMENTS",
+      "date": "DEC 2006"
+    },
+    {
+      "section": "I",
       "number": "52.233-1",
       "title": "DISPUTES",
       "date": "MAY 2014"
@@ -489,7 +545,8 @@
       "section": "I",
       "number": "52.233-3",
       "title": "PROTEST AFTER AWARD",
-      "date": "AUG 1996"
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
     },
     {
       "section": "I",
@@ -528,7 +585,8 @@
       "section": "I",
       "number": "252.204-7012",
       "title": "SAFEGUARDING COVERED DEFENSE INFORMATION AND CYBER INCIDENT REPORTING",
-      "date": "MAY 2024"
+      "date": "JUN 2026",
+      "deviation": "2026-O0025"
     },
     {
       "section": "I",
@@ -541,6 +599,13 @@
       "number": "252.225-7051",
       "title": "PROHIBITION ON ACQUISITION OF CERTAIN FOREIGN COMMERCIAL SATELLITE SERVICES",
       "date": "DEC 2022"
+    },
+    {
+      "section": "I",
+      "number": "252.240-7995",
+      "title": "PROHIBITION ON CONTRACT AWARDS WITH ENTITIES THAT CONTRACT WITH LOBBYISTS FOR CHINESE MILITARY COMPANIES -- REPRESENTATION",
+      "date": "SEP 2026",
+      "deviation": "2026-O0025"
     },
     {
       "section": "I",
@@ -558,21 +623,14 @@
       "section": "I",
       "number": "52.244-6",
       "title": "SUBCONTRACTS FOR COMMERCIAL PRODUCTS AND COMMERCIAL SERVICES",
-      "date": "MAR 2025",
-      "deviation": "2025-O0003"
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
     },
     {
       "section": "I",
       "number": "252.244-7000",
       "title": "SUBCONTRACTS FOR COMMERCIAL PRODUCTS OR COMMERCIAL SERVICES",
       "date": "NOV 2023"
-    },
-    {
-      "section": "I",
-      "number": "252.244-7999",
-      "title": "SUBCONTRACTS FOR COMMERCIAL PRODUCTS OR COMMERCIAL SERVICES",
-      "date": "FEB 2026",
-      "deviation": "2026-O0015"
     },
     {
       "section": "I",
@@ -723,6 +781,19 @@
       "number": "252.204-7017",
       "title": "PROHIBITION ON THE ACQUISITON OF COVERED DEFENSE TELECOMMUNICATIONS EQUIPMENT OR SERVICES -- REPRESENTATION",
       "date": "MAY 2021"
+    },
+    {
+      "section": "K",
+      "number": "252.240-7996",
+      "title": "PROHIBITION ON CONTRACT AWARDS TO CHINESE MILITARY COMPANIES -- REPRESENTATION",
+      "date": "SEP 2026",
+      "deviation": "2026-O0025"
+    },
+    {
+      "section": "K",
+      "number": "252.240-7998",
+      "title": "PROHIBITION ON THE PROCUREMENT OF COVERED SEMICONDUCTOR PRODUCTS AND SERVICES FROM COMPANIES PROVIDING COVERED SEMICONDUCTOR PRODUCTS AND SERVICES TO HUAWEI -- REPRESENTATION",
+      "date": "SEP 2026"
     },
     {
       "section": "L",

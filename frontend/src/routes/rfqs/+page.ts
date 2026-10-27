@@ -1,18 +1,31 @@
 import { getJson, type Archive } from '#lib/api.ts';
 import type { PageLoad } from './$types';
 
-type Rfq = {
+/** One CLIN of a day's RFQs, as GET /api/archives/:id/lines returns it. */
+type Line = {
 	id: number;
+	solicitationId: number;
 	number: string;
-	quoteDueDate: string | null;
-	setAside: boolean | null;
-	office: string | null;
-	buyer: string | null;
+	clin: string;
+	nomenclature: string | null;
 	nsn: string | null;
-	item: string | null;
 	quantity: number | null;
 	unit: string | null;
+	quoteDueDate: string | null;
+	deliveryDays: number | null;
+	setAside: string | null;
+	amsc: string | null;
+	controlled: boolean;
+	firstArticle: boolean;
+	office: string | null;
+	buyer: string | null;
 	fob: string | null;
+	cages: string | null;
+	lastPrice: number | null;
+	lastQuantity: number | null;
+	lastCage: string | null;
+	lastAwardDate: string | null;
+	lastSurplus: boolean | null;
 };
 
 export const load: PageLoad = async ({ fetch, url }) => {
@@ -22,8 +35,8 @@ export const load: PageLoad = async ({ fetch, url }) => {
 		Number(url.searchParams.get('archive')) ||
 		(archives.find((a) => a.state === 'parsed') ?? archives[0])?.id;
 	const q = url.searchParams.get('q') ?? '';
-	const rfqs = archive
-		? await getJson<Rfq[]>(fetch, `/api/archives/${archive}/rfqs?${new URLSearchParams({ q })}`)
+	const lines = archive
+		? await getJson<Line[]>(fetch, `/api/archives/${archive}/lines?${new URLSearchParams({ q })}`)
 		: [];
-	return { archives, archive, q, rfqs };
+	return { archives, archive, q, lines };
 };

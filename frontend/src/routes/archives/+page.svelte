@@ -50,9 +50,18 @@
 
 <h1>Archives</h1>
 <p>
-	One row per DIBBS daily archive. Click a date to see its RFQs, add a day the job missed, or set a
-	row back to pending to download it again. Rows tagged demo hold sample RFQs: the job skips them,
-	and adding the real day replaces them.
+	One row per DIBBS daily archive. Click a date to see its RFQs, or add a day the job missed. Set a
+	row back to pending to download it again, or to downloaded to parse it again. Rows tagged demo hold
+	sample RFQs: the job skips them, and adding the real day replaces them.
+</p>
+<!-- A vendor whose network DIBBS blocks must find out here, not from missing days. -->
+<p role={data.lastCheck?.error ? 'alert' : 'status'}>
+	Last DIBBS check:
+	{#if data.lastCheck}
+		{new Date(data.lastCheck.at).toLocaleString()} · {data.lastCheck.error ?? 'OK'}
+	{:else}
+		none since the server started
+	{/if}
 </p>
 {#if error}
 	<p role="alert">{error}</p>
@@ -65,7 +74,8 @@
 	columns={[
 		{ key: 'date', label: 'Date' },
 		{ key: 'file', label: 'File' },
-		{ key: 'state', label: 'State', filter: true }
+		{ key: 'state', label: 'State', filter: true },
+		{ key: 'errors', label: 'Errors' }
 	]}
 >
 	{#snippet toolbar()}
@@ -87,6 +97,15 @@
 			>
 				{#each STATES as s (s)}<option>{s}</option>{/each}
 			</select>
+		{:else if key === 'errors'}
+			{#if archive.errors}
+				<details>
+					<summary>{archive.errors.length}</summary>
+					<ul>
+						{#each archive.errors as e, i (i)}<li>{e.file}: {e.error}</li>{/each}
+					</ul>
+				</details>
+			{/if}
 		{:else}{text}{/if}
 	{/snippet}
 </DataTable>

@@ -1,0 +1,11 @@
+**/node_modules
+**/dist
+**/.svelte-kit
+**/*.tsbuildinfo
+frontend/build
+backend/data
+/data
+.git
+**/.env*
+**/*.tgz
+**/.DS_Store

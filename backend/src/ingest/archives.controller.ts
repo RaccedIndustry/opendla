@@ -33,6 +33,12 @@ export class ArchivesController {
     return this.archives.find({ order: { date: 'DESC' } });
   }
 
+  /** When the job last looked at DIBBS's dates page and whether that worked; null until the first run. */
+  @Get('status')
+  status() {
+    return { lastCheck: this.ingest.lastCheck ?? null };
+  }
+
   /** Queue a day the job skipped. The URL comes from DIBBS's own list, so a day it never posted can't sit in pending forever. */
   @Post()
   async add(@Body('date') date: unknown) {

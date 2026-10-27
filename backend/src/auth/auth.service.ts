@@ -41,13 +41,21 @@ export class AuthService implements OnApplicationBootstrap {
     private readonly jwt: JwtService,
   ) {}
 
+  // ADMIN_PASSWORD is applied on every start, so it is also how a lost password gets reset.
   async onApplicationBootstrap() {
-    if (await this.users.count()) return;
-    await this.users.insert({
-      username: 'admin',
-      passwordHash: await hashPassword('admin'),
-    });
-    this.logger.warn('Created default login admin/admin');
+    const fromEnv = process.env.ADMIN_PASSWORD;
+    if (!fromEnv && (await this.users.count())) return;
+    // || not ??: an empty ADMIN_PASSWORD must never create a blank-password admin.
+    const password = fromEnv || randomBytes(12).toString('base64url');
+    await this.users.upsert(
+      { username: 'admin', passwordHash: await hashPassword(password) },
+      ['username'],
+    );
+    if (!fromEnv) {
+      this.logger.warn(
+        `Created user admin with password ${password}. This is shown only once; to reset it, set ADMIN_PASSWORD and start the app again (Docker: docker compose up -d).`,
+      );
+    }
   }
 
   async login(username: string, password: string) {

@@ -25,7 +25,7 @@
 
 {#if data.user}
 	<header>
-		<a class="brand" href="/">RFQ CRM</a>
+		<a class="brand" href="/">Open DLA Bid Core</a>
 		<nav>
 			{#each tabs as [href, label] (href)}
 				<a {href} aria-current={page.url.pathname.startsWith(href) ? 'page' : undefined}>{label}</a>

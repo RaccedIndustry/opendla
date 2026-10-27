@@ -17,7 +17,7 @@
 
 <form onsubmit={login}>
 	<hgroup>
-		<p>RFQ CRM</p>
+		<p>Open DLA Bid Core</p>
 		<h1>Sign in</h1>
 	</hgroup>
 	<label>

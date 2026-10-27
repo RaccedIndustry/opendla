@@ -1,6 +1,7 @@
 {
   "name": "rfqcrm",
   "private": true,
+  "license": "Apache-2.0",
   "workspaces": [
     "backend",
     "frontend"

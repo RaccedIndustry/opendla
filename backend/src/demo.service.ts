@@ -3,13 +3,20 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { readFile } from 'node:fs/promises';
 import { Repository } from 'typeorm';
 import { Archive } from './ingest/archive.entity.js';
-import { Rfq, type RfqJson } from './rfq/rfq.entity.js';
+import { indexRows } from './ingest/dibbs.js';
+import { PARSER_VERSION } from './parser/parse.js';
+import { type RfqJson, storeRfq } from './solicitations/solicitation.entity.js';
 
 /**
- * Every 33rd RFQ rfq2json.js wrote for DIBBS's 2026-10-22 archive. To rebuild it, from the repo root:
- * ls data/CA261022/*.json | awk 'NR % 33 == 1' | xargs jq -s . > backend/demo/ca261022.json
+ * Every 33rd RFQ of DIBBS's 2026-10-22 archive as parser/parse.js writes it, and those RFQs' rows of
+ * that day's index. Rebuild both after a parser change, from the repo root (parsed day in data/CA261022-pdfjs,
+ * index in IN261022.TXT):
+ *   ls data/CA261022-pdfjs/*.json | awk 'NR % 33 == 1' | xargs jq -s . > backend/demo/ca261022.json
+ *   jq -r '.[].solicitation.number | gsub("-"; "")' backend/demo/ca261022.json | grep -F -f - IN261022.TXT > backend/demo/in261022.txt
+ * (src/ and dist/ sit side by side, so these URLs work from both)
  */
-const SAMPLE = new URL('../demo/ca261022.json', import.meta.url); // backend/demo, from src/ and dist/
+const SAMPLE = new URL('../demo/ca261022.json', import.meta.url);
+const INDEX = new URL('../demo/in261022.txt', import.meta.url);
 
 /** Gives a fresh install something to show: one archive of real RFQs, flagged demo. */
 @Injectable()
@@ -24,6 +31,7 @@ export class DemoService implements OnApplicationBootstrap {
   async onApplicationBootstrap() {
     if (await this.archives.exists()) return;
     const sample = JSON.parse(await readFile(SAMPLE, 'utf8')) as RfqJson[];
+    const index = indexRows(await readFile(INDEX, 'latin1'));
     await this.archives.manager.transaction(async (em) => {
       const { id } = await em.save(Archive, {
         date: '2026-10-22',
@@ -32,7 +40,13 @@ export class DemoService implements OnApplicationBootstrap {
         state: 'parsed',
         demo: true,
       });
-      await em.save(sample.map((json) => Rfq.from(id, json)));
+      for (const json of sample) {
+        const row = index.get(json.solicitation.number.replaceAll('-', ''));
+        await storeRfq(em, id, json, row, {
+          sha256: null,
+          parserVersion: PARSER_VERSION,
+        });
+      }
     });
     this.logger.log(`Added demo archive 2026-10-22 with ${sample.length} RFQs`);
   }

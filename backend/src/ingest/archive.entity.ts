@@ -23,4 +23,8 @@ export class Archive {
   /** Sample data from demo.service.ts. The job never picks it up, and a real archive for the same day replaces it. */
   @Column({ default: false })
   demo: boolean;
+
+  /** What went wrong in the last download or parse: the files skipped and why. */
+  @Column({ type: 'simple-json', nullable: true })
+  errors: { file: string; error: string }[] | null;
 }

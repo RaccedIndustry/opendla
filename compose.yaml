@@ -1,0 +1,12 @@
+name: open-dla-bid-core
+services:
+  app:
+    build: .
+    init: true
+    restart: unless-stopped
+    # BIND=<LAN IP> opens it to the office network; the default is this machine only.
+    ports: ["${BIND:-127.0.0.1}:${PORT:-3000}:3000"]
+    environment: [ADMIN_PASSWORD]
+    volumes: [data:/app/backend/data]
+volumes:
+  data:

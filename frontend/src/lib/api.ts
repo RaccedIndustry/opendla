@@ -6,6 +6,8 @@ export type Archive = {
 	fileUrl: string;
 	state: 'pending' | 'downloaded' | 'parsed';
 	demo: boolean;
+	/** What the last download or parse skipped, and why. */
+	errors: { file: string; error: string }[] | null;
 };
 
 /** GET JSON inside a load function: 401 goes to the login page, other failures to the error page. */

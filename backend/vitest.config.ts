@@ -8,5 +8,7 @@ export default defineConfig({
     globals: true,
     root: './',
     include: ['**/*.spec.ts'],
+    // Tests must never open the dev DB, data/rfqcrm.sqlite.
+    env: { DB_PATH: ':memory:' },
   },
 });

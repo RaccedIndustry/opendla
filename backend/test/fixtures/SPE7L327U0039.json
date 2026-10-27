@@ -1,0 +1,754 @@
+{
+  "source_file": "SPE7L327U0039.pdf",
+  "solicitation": {
+    "number": "SPE7L3-27-U-0039",
+    "issue_date": "2026-10-23",
+    "quote_due_date": "2026-11-06",
+    "purchase_request": "1000247547",
+    "dpas_rating": null,
+    "naics": "333618",
+    "quote_validity_days": null
+  },
+  "issuing_office": {
+    "lines": [
+      "DLA WEAPONS SUPPORT",
+      "LAND SUPPLIER OPNS VEHICLE SPT",
+      "PO BOX 3990",
+      "COLUMBUS OH 43218-3990",
+      "USA"
+    ],
+    "city": "COLUMBUS",
+    "state": "OH",
+    "zip": "43218-3990",
+    "country": "USA"
+  },
+  "buyer": {
+    "name": "AARON MOORE",
+    "code": "PLCL67C",
+    "phone": "6146921439",
+    "fax": null,
+    "email": "AARON.S.MOORE@DLA.MIL"
+  },
+  "items": [
+    {
+      "pgc": null,
+      "pr": "1000247547",
+      "nsn": "2910-01-589-1060",
+      "description": "PUMP,FUEL,METERING AND DISTRIBUTING",
+      "reference_docs": [],
+      "approved_sources": [
+        {
+          "name": "DEERE & COMPANY",
+          "cage": "75755",
+          "part_number": "RE507959"
+        }
+      ],
+      "requirement_codes": [
+        {
+          "code": "RP001",
+          "text": "DLA PACKAGING REQUIREMENTS FOR PROCUREMENT"
+        },
+        {
+          "code": "RA001",
+          "text": "THIS DOCUMENT INCORPORATES TECHNICAL AND/OR QUALITY REQUIREMENTS (IDENTIFIED BY AN 'R' OR AN 'I' NUMBER) SET FORTH IN FULL TEXT IN THE DLA MASTER LIST OF TECHNICAL AND QUALITY REQUIREMENTS FOUND ON THE WEB AT:"
+        },
+        {
+          "code": "RQ011",
+          "text": "REMOVAL OF GOVERNMENT IDENTIFICATION FROM NON-ACCEPTED SUPPLIES"
+        }
+      ],
+      "notes": [
+        "PUMP,FUEL,METERING",
+        "http://www.dla.mil/HQ/Acquisition/Offers/eProcurement.aspx",
+        "FOR SIMPLIFIED ACQUISITIONS, THE REVISION OF THE MASTER IN EFFECT ON THE SOLICITATION ISSUE DATE OR THE AWARD DATE CONTROLS. FOR LARGE ACQUISITIONS, THE REVISION OF THE MASTER IN EFFECT ON THE RFP ISSUE DATE APPLIES UNLESS A SOLICITATION AMENDMENT INCORPORATES A FOLLOW-ON REVISION, IN WHICH CASE THE AMENDMENT DATE CONTROLS.",
+        "LINE ITEM 0000000001 TYPE OF COVERAGE: DLA DIRECT, CONUS",
+        "DLA issues this document using the DoD authorized unit of issue, please refer to the following URL to determine the corresponding ANSI X12 unit of issue.",
+        "https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fwww.dla.mil%2FPortals%2F104%2FDocuments%2FDLMS%2FeApplications%2FLogDataAdmin%2FUnit_of_Issue_and_Purchase_Unit.xlsx&wdOrigin=BROWSELINK"
+      ],
+      "clins": [
+        {
+          "clin": "0001",
+          "nsn": "2910-01-589-1060",
+          "nomenclature": null,
+          "quantity": 28,
+          "unit": "EA",
+          "pricing_terms": null,
+          "qty_variance_pct": {
+            "plus": 0,
+            "minus": 0
+          },
+          "inspection_point": "DESTINATION",
+          "acceptance_point": "DESTINATION",
+          "fob": "ORIGIN",
+          "delivery_days_ado": 84,
+          "rdd": null,
+          "need_ship_date": null,
+          "pr": "1000247547",
+          "prli": "0001",
+          "packaging": {
+            "standard": null,
+            "codes": {
+              "QUP": "001"
+            },
+            "instructions": [
+              "WILL BE PACKAGED IN ACCORDANCE WITH ASTM D3951.",
+              "All DLA Master List of Technical and Quality Requirements take precedence over ASTM D3951. Mark and label all packaging and packing in accordance with MIL-STD-129. The Unit of Issue (U/I) and Quantity per Unit Pack (QUP) will be",
+              "as specified in the contract/purchase order. PALLETIZATION SHALL BE IN ACCORDANCE WITH RP001: DLA PACKAGING REQUIREMENTS FOR PROCUREMENT",
+              "* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *"
+            ]
+          },
+          "ship_to": {
+            "parcel_post": null,
+            "freight": null,
+            "bulk_break_point": null,
+            "freight_forwarder": null,
+            "mark_for": null
+          },
+          "notes": [
+            "* This is an estimated quantity and may not be purchased by the IDC."
+          ]
+        }
+      ]
+    }
+  ],
+  "first_article": null,
+  "warranty_months": null,
+  "notes": [
+    "This solicitation may result in an Indefinite Delivery Contract (IDC) below the Simplified Acquisition Threshold for a one year period.",
+    "NSN: 2910015891060",
+    "FOR INFORMATION PURPOSES ONLY:",
+    "Note to offeror: Because this is a UNILATERAL IDC (Indefinite Delivery Contract), it is not binding on either party until a delivery order has been placed and the contractor acceptably performs. As a result, contract terms, including Contract Limitations and the Guaranteed Minimum, do not apply until the IDC becomes binding (after a delivery order is placed and the contractor acceptably performs). Reference Proc Note H06.",
+    "Guaranteed Contract Minimum Quantity: 4 EA applies once the contract is determined binding. See note above.",
+    "Contract Maximum Value: $350000.00",
+    "****NOT A FIRM QUANTITY*****",
+    "Estimated Annual Quantity: 28.000 EA This is an estimate only and may not be purchased by the IDC.",
+    "****NOT A FIRM QUANTITY*****",
+    "Estimated Number of orders: 2 This is an estimate only. The actual number of orders may vary depending on the Government need.",
+    "Minimum Delivery Order Quantity: 7 EA",
+    "“Ship to” addresses will be identified on each individual delivery order. All deliveries will be within the continental United States.",
+    "By furnishing the supplies in the first delivery order, the contractor accepts the Government's offer and an IDC is formed. The contractor agrees to honor additional orders at the price quoted. Failure to make timely delivery on a follow-on order may therefore result in contractor liability to the Government under the terms of the Default Clause at FAR 52.249-8.",
+    "The following are considered exceptions to the solicitation requirements in addition to those listed in PART I of the Defense Logistics Agency (DLA) Master Solicitation for Automated Simplified Acquisitions and will make a quotation ineligible for an automated award: (a) Quoting a used, reconditioned, remanufactured item, or unused former Government surplus property. (b) Quoting less than the minimum of 90 days validity period.",
+    "52.216-19 ORDER LIMITATIONS (OCT 1995)",
+    "(a) Minimum order. When the Government requires supplies or services covered by this contract in an amount of less than 7 EA, the Government is not obligated to purchase, nor is the Contractor obligated to furnish, those supplies or services under the contract.",
+    "(b) Maximum order. The Contractor is not obligated to honor—",
+    "(1) Any order for a single item in excess of $350000.00 Contract Maximum Value; (2) Any order for a combination of items in excess of N/A or; (3) A series of orders from the same ordering office within 7 days that together call for quantities exceeding the limitation in paragraph(b)(1) or (2) of this section.",
+    "(c) If this is a requirements contract (i.e., includes the Requirements clause at subsection 52.216-21 of the Federal Acquisition Regulation (FAR)), the Government is not required to order a part of any one requirement from the Contractor if that requirement exceeds the maximum-order limitations in paragraph (b) of this section.",
+    "(d) Notwithstanding paragraphs (b) and (c) of this section, the Contractor shall honor any order exceeding the maximum order limitations in paragraph (b), unless that order (or orders) is returned to the ordering office within 7 days after issuance, with written notice stating the Contractor’s intent not to ship the item (or items) called for and the reasons. Upon receiving this notice, the Government may",
+    "acquire the supplies or services from another source.",
+    "52.216-22 INDEFINITE QUANTITY (OCT 1995)",
+    "(a) This is an indefinite-quantity contract for the supplies or services specified, and effective for the period stated, in the Schedule. The quantities of supplies and services specified in the Schedule are estimates only and are not purchased by this contract.",
+    "(b) Delivery or performance shall be made only as authorized by orders issued in accordance with the Ordering clause. The Contractor shall furnish to the Government, when and if ordered, the supplies or services specified in the Schedule up to and including the quantity designated in the Schedule as the \"maximum\". The Government shall order at least the quantity of supplies or services designated in the Schedule as the \"minimum\".",
+    "(c) Except for any limitations on quantities in the Order Limitations clause or in the Schedule, there is no limit on the number of orders that may be issued. The Government may issue orders requiring delivery to multiple destinations or performance at multiple locations.",
+    "(d) Any order issued during the effective period of this contract and not completed within that period shall be completed by the Contractor within the time specified in the order. The contract shall govern the Contractor’s and Government’s rights and obligations with respect to that order to the same extent as if the order were completed during the contract’s effective period; provided, that the Contractor shall not be required to make any deliveries under this contract after final scheduled delivery date.",
+    "52.216-18 Ordering (Aug 2020)",
+    "(a) Any supplies and services to be furnished under this contract shall be ordered by issuance of delivery orders or task orders by the individuals or activities designated in the Schedule. Such orders may be issued within 1 year from contract award.",
+    "(b) All delivery orders or task orders are subject to the terms and conditions of this contract. In the event of conflict between a delivery order or task order and this contract, the contract shall control.",
+    "(c) A delivery order or task order is considered “issued” when—",
+    "(1) If sent by mail (includes transmittal by U.S. mail or private delivery service), the Government deposits the order in the mail;",
+    "(2) If sent by fax, the Government transmits the order to the Contractor's fax number; or",
+    "(3) If sent electronically, the Government either—",
+    "(i) Posts a copy of the delivery order or task order to a Government document access system, and notice is sent to the Contractor; or",
+    "(ii) Distributes the delivery order or task order via email to the Contractor's email address.",
+    "(d) Orders may be issued by methods other than those enumerated in this clause only if authorized in the contract.",
+    "H06 Unilateral Simplified Indefinite-Delivery Contract (SIDC) (SEP 2021)",
+    "(1) The Government will award a unilateral SIDC resulting from this request for quote (RFQ) to the responsible offeror whose quote conforms to the terms and conditions in the (RFQ) and will be most advantageous to the Government, after considering price and other factors. This initial unilateral SIDC is referred to hereafter as the “basic SIDC”.",
+    "(2) Pricing of orders. The unit price for orders is based on the price for the quantity range that will cover the total quantity on the order, regardless of destination.",
+    "(3) Price evaluation will be based on the price quoted for the estimated annual demand in the schedule.",
+    "(4) Acceptable contractor performance on the initial task or delivery order creates the SIDC and constitutes agreement by the contractor to accept additional orders under the same terms and conditions specified in the basic SIDC. The guaranteed minimum quantity stated in the basic SIDC becomes applicable at this point.",
+    "(5) Once the guaranteed minimum quantity stated in the basic SIDC is met, the Government is under no",
+    "obligation to place additional orders. The Government may place additional orders for the period of performance stated in the basic SIDC, effective from the award date of the basic SIDC. All additional orders will reference the basic SIDC, which documents the terms and conditions of the SIDC. The basic SIDC states the maximum value of each task or delivery orders under the SIDC. The maximum value of the SIDC will not exceed the SAT; or, for SIDCs using FAR subpart 13.5, the thresholds in 13.500(a). ************************************************************************",
+    "THIS BUY MAY BE A CANDIDATE FOR AUTOMATED AWARD. HOWEVER, AUTOMATED SOLICITATIONS CONTAINING FIRST ARTICLE TEST REQUIREMENTS ARE NOT CANDIDATES FOR AN AUTOMATED AWARD. ALL QUOTES MUST BE SUBMITTED VIA THE DLA INTERNET BID BOARD SYSTEM (DIBBS) AT https://www.dibbs.bsm.dla.mil. MICRO-PURCHASE QUOTES MAY BE AWARDED PRIOR TO RETURN DATE.",
+    "FAR 52.219-3 Notice of HUBZone Set-Aside or Sole Source Award",
+    "NOTE: FAR 19.1303 requires HUBZone concerns to be certified by the Small Business Administration (SBA). Only vendors that are certified by SBA are eligible for HUBZone set-asides or sole source contracts.",
+    "https://www.sba.gov/federal-contracting/contracting-assistance-programs/hubzone-program#section-header-8",
+    "FAR 52.219-14 Limitations on Subcontracting (FEB 2023) (Deviation 2021- O0008)",
+    "The Non-Manufacturer rule is not waived.",
+    "FAR 52.219-33 Nonmanufacturer Rule",
+    "NORTH AMERICAN INDUSTRY CLASSIFICATION SYSTEM 333618 Refer to the corresponding small business size standard http://www.sba.gov/content/table-small-business-size-standards However, the small business size standard for a concern that submits an offer but proposes to furnish an end item that it did not itself manufacture, process, or produce is 500 employees if the acquisition is 1) an 8(a), HUBZone, service-disabled veteran-owned, economically disadvantaged women-owned, or women-owned small business set-aside or",
+    "sole-source award; or 2) uses the HUBZone price evaluation preference to award to a HUBZone concern, unless the concern waived the evaluation preference.",
+    "DFARS 252.225-7001, BUY AMERICAN AND BALANCE OF PAYMENTS PROGRAM, APPLIES TO ALL QUOTES ABOVE THE MICRO-PURCHASE THRESHOLD.",
+    "DESTINATION INSPECTION REQUIRED - FAR 52.246-1 APPLIES.",
+    "Fast Pay does not apply to this solicitation",
+    "Due to the volatility of demands, and frequent quantity changes on open purchase requests, offerors are highly encouraged to submit quantity ranges when quoting. If a PR is evaluated manually, quoting ranges provides the buyer the option to combine requirements or reduce the quantity as needed without resoliciting or adding any additional administrative burden for either party involved when making an award. This does not apply to Auto IDC.",
+    "If you anticipate quoting on a solicitation after the closing date, please submit a DIBBS quote with a bid type of “No Bid” and place an anticipated quote date or the reason you are not willing to quote. This does not prevent you from submitting an actual quote on DIBBS at a later date. It will overlay your previous no quote. This informs buyers of your intention to quote and prevents multiple calls for updates and cancelling of requirements assumed to be non-procurable due to no quotes/sources. The submission of an anticipated quote date does not preclude DLA from making an award to another acceptable timely offer.",
+    "APEX Accelerators, formally known as the Procurement Technical Assistance Program (PTAP), is designed to increase the number of",
+    "U.S. businesses capable of bidding and performing on local, state, and federal government contracts. APEX Accelerators provide critical assistance to new and existing businesses interested government contracting to enhance the defense industrial base at no cost. Visit https://www.apexaccelerators.us/#/ for more information. 6, THE OFFEROR, BY SUBMISSION OF ITS QUOTATION, REPRESENTS IT WILL NOT PROVIDE COVERED TELECOMMUNICATIONS EQUIPMENT OR SERVICES TO THE GOVERNMENT IN THE PERFORMANCE OF ANY AWARD RESULTING FROM THIS SOLICITATION, IN ACCORDANCE WITH PARAGRAPH (d) OF THE CLAUSE AT FAR 52.204-24, REPRESENTATION REGARDING CERTAIN TELECOMMUNICATIONS AND VIDEO SURVEILLANCE SERVICES OR EQUIPMENT, OR IN ACCORDANCE WITH ITS EXISTING REPRESENTATION IN PARAGRAPH (c) OF THE PROVISION AT DFARS 252.204-7016, COVERED DEFENSE TELECOMMUNICATIONS EQUIPMENT OR SERVICES – REPRESENTATION.",
+    "Caution Notice: Offerors are required to comply with domestic material restrictions. The Berry Amendment, the Buy American Act, and other domestic material restrictions may apply. Offerors are instructed to refer to the solicitation clauses related to foreign sourcing for more information on applicability. The Berry Amendment threshold has been reduced to $150,000 and vendors must carefully review related clauses DFARS 252.225-7006, 252.225-7012, and 252.225-7015 for applicability requirements. If your offer is based on a non-domestic material, you are required to provide disclosure information in your quote and/or through written notification to the point of contact listed in the solicitation.",
+    "DoD Class Deviation 2023-O0001: A small business joint venture offeror must submit, with its offer, the representation required in paragraph (c) of FAR solicitation provision 52.212-3, Offeror Representations and Certifications-Commercial Products and Commercial Services, and paragraph (c) of FAR solicitation provision 52.219-1, Small Business Program Representations, in accordance with 52.204-8(d) and 52.212- 3(b) for the following categories: (A) Small business;",
+    "(B) Service-disabled veteran-owned small business; (C) Women-owned small business (WOSB) under the WOSB Program; (D) Economically disadvantaged women-owned small business under the WOSB Program; or (E) Historically underutilized business zone small business.",
+    "ACCESSING & USE OF VENDOR SHIPMENT MODULE (VSM) IS CHANGING Within approximately 2 months, ALL DLA contractors will be required to register via DLA’s Account Management & Provisioning System (AMPS) to access VSM. Without AMPS approval, contractors will not be able to access VSM or ship to DLA.",
+    "Contractors using VSM WebServices MUST update their internal schema or lose access and shipping ability. Online VSM users do not need schema changes.",
+    "Required actions: • Review VSM announcements. Schema updates are in the April 23, 2025 post: https://www.dibbs.bsm.dla.mil/notices/msgdspl.aspx?msgid=1259",
+    "• Additional notices: https://www.dibbs.bsm.dla.mil/notices/msgdspl.aspx?msgid=1267 https://www.dibbs.bsm.dla.mil/notices/msgdspl.aspx?msgid=1252 https://www.dibbs.bsm.dla.mil/notices/msgdspl.aspx?msgid=1229",
+    "AMPS registration is not available at this time; however, check DLA's DIBBS \"Notices\" section daily for updates.",
+    "• To receive AMPS/User Guide updates via email, contact: JSONWEBServiceInquiry@dla.mil",
+    "Unless AM is specifically authorized in the solicitation/contract, quotes/offers may not include parts or supplies made using the additive manufacturing process. The Government will not evaluate offers that include an item or items produced using AM, and such offers are not",
+    "eligible for award for the current procurement. A quoter/offeror proposing to supply an AM- produced item may submit a request to the contracting officer for approval of the item for evaluation by the Engineering Support Activity (ESA) for acceptability for future procurements of the same items. See L31 Additive Manufacturing (JUN 2018)",
+    "This solicitation is being issued under the First Destination Transportation (FDT) program to reduce cost of transportation through the use of Government-Arranged Transportation utilizing Government contracts and rates. Offers should be submitted based on FOB Origin. For offerors whose shipments will orginate from outside the contiguous United States, the offeror's FOB Origin price shall include transportation to a contiguous United States location that the offeror selects based on cost effectiveness or other variables at the offeror's discretion. Additional information about FDT can be found at: http://www.dla.mil/FDTPI/"
+  ],
+  "procurement_history": [
+    {
+      "nsn": "2910-01-589-1060",
+      "cage": "13WM9",
+      "contract": "SPE7L126F153N",
+      "quantity": 11,
+      "unit_price": 2417,
+      "award_date": "2026-08-27",
+      "surplus": false
+    },
+    {
+      "nsn": "2910-01-589-1060",
+      "cage": "13WM9",
+      "contract": "SPE7L126F1812",
+      "quantity": 11,
+      "unit_price": 2417,
+      "award_date": "2025-11-27",
+      "surplus": false
+    },
+    {
+      "nsn": "2910-01-589-1060",
+      "cage": "0REY5",
+      "contract": "SPE7L525V1862",
+      "quantity": 9,
+      "unit_price": 2467,
+      "award_date": "2025-08-18",
+      "surplus": false
+    },
+    {
+      "nsn": "2910-01-589-1060",
+      "cage": "966S1",
+      "contract": "SPE7L125V7526P00001",
+      "quantity": 5,
+      "unit_price": 2675.23,
+      "award_date": "2025-04-14",
+      "surplus": false
+    },
+    {
+      "nsn": "2910-01-589-1060",
+      "cage": "0USU9",
+      "contract": "SPE7L125V6200",
+      "quantity": 13,
+      "unit_price": 2550,
+      "award_date": "2025-03-18",
+      "surplus": false
+    },
+    {
+      "nsn": "2910-01-589-1060",
+      "cage": "6PZL1",
+      "contract": "SPE7L725V0302",
+      "quantity": 5,
+      "unit_price": 2876.59,
+      "award_date": "2024-11-25",
+      "surplus": false
+    },
+    {
+      "nsn": "2910-01-589-1060",
+      "cage": "4X8W5",
+      "contract": "SPE7L724P1625",
+      "quantity": 10,
+      "unit_price": 2654.1,
+      "award_date": "2024-03-12",
+      "surplus": false
+    },
+    {
+      "nsn": "2910-01-589-1060",
+      "cage": "0PJT5",
+      "contract": "SPE7L024V0917P00001",
+      "quantity": 7,
+      "unit_price": 711.98,
+      "award_date": "2023-11-21",
+      "surplus": false
+    },
+    {
+      "nsn": "2910-01-589-1060",
+      "cage": "5Z018",
+      "contract": "SPE7L723V0375",
+      "quantity": 3,
+      "unit_price": 2269.69,
+      "award_date": "2023-02-01",
+      "surplus": false
+    },
+    {
+      "nsn": "2910-01-589-1060",
+      "cage": "54UW7",
+      "contract": "SPE7L723V0276",
+      "quantity": 2,
+      "unit_price": 2295.72,
+      "award_date": "2022-12-22",
+      "surplus": false
+    },
+    {
+      "nsn": "2910-01-589-1060",
+      "cage": "54UW7",
+      "contract": "SPE7L023V0691",
+      "quantity": 1,
+      "unit_price": 2295.9,
+      "award_date": "2022-12-01",
+      "surplus": false
+    },
+    {
+      "nsn": "2910-01-589-1060",
+      "cage": "5Z018",
+      "contract": "SPE7L022V4502",
+      "quantity": 2,
+      "unit_price": 1880.69,
+      "award_date": "2022-09-07",
+      "surplus": false
+    },
+    {
+      "nsn": "2910-01-589-1060",
+      "cage": "4V314",
+      "contract": "SPE7MX21FA4D8",
+      "quantity": 2,
+      "unit_price": 1881.96,
+      "award_date": "2020-11-22",
+      "surplus": false
+    },
+    {
+      "nsn": "2910-01-589-1060",
+      "cage": "4V314",
+      "contract": "SPE7MX21FA2C9",
+      "quantity": 1,
+      "unit_price": 1881.96,
+      "award_date": "2020-11-17",
+      "surplus": false
+    },
+    {
+      "nsn": "2910-01-589-1060",
+      "cage": "4V314",
+      "contract": "SPE7LX20FZ44D",
+      "quantity": 3,
+      "unit_price": 1881.96,
+      "award_date": "2020-08-27",
+      "surplus": false
+    },
+    {
+      "nsn": "2910-01-589-1060",
+      "cage": "4V314",
+      "contract": "SPE7MX20FABZS",
+      "quantity": 1,
+      "unit_price": 1881.96,
+      "award_date": "2020-02-29",
+      "surplus": false
+    },
+    {
+      "nsn": "2910-01-589-1060",
+      "cage": "4V314",
+      "contract": "SPE7MX20FA605",
+      "quantity": 2,
+      "unit_price": 1846.51,
+      "award_date": "2019-10-08",
+      "surplus": false
+    },
+    {
+      "nsn": "2910-01-589-1060",
+      "cage": "4V314",
+      "contract": "SPE7MX19FAYJ1",
+      "quantity": 1,
+      "unit_price": 1846.51,
+      "award_date": "2019-05-07",
+      "surplus": false
+    },
+    {
+      "nsn": "2910-01-589-1060",
+      "cage": "4V314",
+      "contract": "SPE7MX19FAXK5",
+      "quantity": 1,
+      "unit_price": 1846.51,
+      "award_date": "2019-05-06",
+      "surplus": false
+    },
+    {
+      "nsn": "2910-01-589-1060",
+      "cage": "4V314",
+      "contract": "SPE7MX18FASPJ",
+      "quantity": 1,
+      "unit_price": 1813.86,
+      "award_date": "2018-08-02",
+      "surplus": false
+    }
+  ],
+  "clauses": [
+    {
+      "section": "F",
+      "number": "52.242-17",
+      "title": "GOVERNMENT DELAY OF WORK",
+      "date": "APR 1984"
+    },
+    {
+      "section": "H",
+      "number": "252.223-7001",
+      "title": "HAZARD WARNING LABELS",
+      "date": "DEC 1991"
+    },
+    {
+      "section": "I",
+      "number": "252.203-7000",
+      "title": "REQUIREMENTS RELATING TO COMPENSATION OF FORMER DoD OFFICIALS",
+      "date": "SEP 2011"
+    },
+    {
+      "section": "I",
+      "number": "252.203-7002",
+      "title": "REQUIREMENT TO INFORM EMPLOYEES OF WHISTLEBLOWER RIGHTS",
+      "date": "DEC 2022"
+    },
+    {
+      "section": "I",
+      "number": "252.204-7000",
+      "title": "DISCLOSURE OF INFORMATION",
+      "date": "OCT 2016"
+    },
+    {
+      "section": "I",
+      "number": "252.204-7003",
+      "title": "CONTROL OF GOVERNMENT PERSONNEL WORK PRODUCT",
+      "date": "APR 1992"
+    },
+    {
+      "section": "I",
+      "number": "252.204-7009",
+      "title": "LIMITATIONS ON THE USE OR DISCLOSURE OF THIRD-PARTY CONTRACTOR REPORTED CYBER INCIDENT INFORMATION",
+      "date": "JAN 2023"
+    },
+    {
+      "section": "I",
+      "number": "252.204-7012",
+      "title": "SAFEGUARDING COVERED DEFENSE INFORMATION AND CYBER INCIDENT REPORTING",
+      "date": "MAY 2024"
+    },
+    {
+      "section": "I",
+      "number": "252.204-7015",
+      "title": "NOTICE OF AUTHORIZED DISCLOSURE OF INFORMATION TO LITIGATION SUPPORT",
+      "date": "JAN 2023"
+    },
+    {
+      "section": "I",
+      "number": "252.204-7018",
+      "title": "PROHIBITION ON THE ACQUISITION OF COVERED DEFENSE TELECOMMUNICATIONS EQUIPMENT OR SERVICES",
+      "date": "JAN 2023"
+    },
+    {
+      "section": "I",
+      "number": "252.204-7024",
+      "title": "NOTICE ON THE USE OF THE SUPPLIER PERFORMANCE RISK SYSTEM",
+      "date": "MAR 2023"
+    },
+    {
+      "section": "I",
+      "number": "252.222-7006",
+      "title": "RESTRICTIONS ON THE USE OF MANDATORY ARBITRATION AGREEMENTS",
+      "date": "JAN 2023"
+    },
+    {
+      "section": "I",
+      "number": "252.223-7006",
+      "title": "PROHIBITION ON STORAGE, TREATMENT, AND DISPOSAL OF TOXIC OR HAZARDOUS MATERIALS - BASIC",
+      "date": "SEP 2014"
+    },
+    {
+      "section": "I",
+      "number": "252.223-7008",
+      "title": "PROHIBITION OF HEXAVALENT CHROMIUM",
+      "date": "JAN 2023"
+    },
+    {
+      "section": "I",
+      "number": "252.225-7007",
+      "title": "PROHIBITION ON ACQUISITION OF UNITED STATES MUNITIONS LIST ITEMS FROM COMMUNIST CHINESE MILITARY COMPANIES",
+      "date": "DEC 2018"
+    },
+    {
+      "section": "I",
+      "number": "252.225-7048",
+      "title": "EXPORT-CONTROLLED ITEMS",
+      "date": "JUN 2013"
+    },
+    {
+      "section": "I",
+      "number": "252.232-7003",
+      "title": "ELECTRONIC SUBMISSION OF PAYMENT REQUESTS AND RECEIVING REPORTS",
+      "date": "DEC 2018"
+    },
+    {
+      "section": "I",
+      "number": "252.232-7006",
+      "title": "WIDE AREA WORKFLOW PAYMENT INSTRUCTIONS",
+      "date": "JAN 2023"
+    },
+    {
+      "section": "I",
+      "number": "252.232-7010",
+      "title": "LEVIES ON CONTRACT PAYMENTS",
+      "date": "DEC 2006"
+    },
+    {
+      "section": "I",
+      "number": "252.240-7997",
+      "title": "NIST SP 800-171 DOD ASSESSMENT REQUIREMENTS",
+      "date": "FEB 2026",
+      "deviation": "2026-O0025"
+    },
+    {
+      "section": "I",
+      "number": "252.243-7001",
+      "title": "PRICING OF CONTRACT MODIFICATIONS",
+      "date": "DEC 1991"
+    },
+    {
+      "section": "I",
+      "number": "252.244-7999",
+      "title": "SUBCONTRACTS FOR COMMERCIAL PRODUCTS OR COMMERCIAL SERVICES",
+      "date": "FEB 2026",
+      "deviation": "2026-O0015"
+    },
+    {
+      "section": "I",
+      "number": "252.246-7003",
+      "title": "NOTIFICATION OF POTENTIAL SAFETY ISSUES",
+      "date": "JAN 2023"
+    },
+    {
+      "section": "I",
+      "number": "252.247-7023",
+      "title": "TRANSPORTATION OF SUPPLIES BY SEA—BASIC",
+      "date": "OCT 2024"
+    },
+    {
+      "section": "I",
+      "number": "252.247-7025",
+      "title": "REFLAGGING OR REPAIR WORK",
+      "date": "OCT 2024"
+    },
+    {
+      "section": "I",
+      "number": "52.203-19",
+      "title": "PROHIBITION ON REQUIRING CERTAIN INTERNAL CONFIDENTIALITY AGREEMENTS OR STATEMENTS",
+      "date": "JAN 2017"
+    },
+    {
+      "section": "I",
+      "number": "52.204-13",
+      "title": "SYSTEM FOR AWARD MANAGEMENT -- MAINTENANCE",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "I",
+      "number": "52.211-5",
+      "title": "MATERIAL REQUIREMENTS",
+      "date": "AUG 2000"
+    },
+    {
+      "section": "I",
+      "number": "52.213-4",
+      "title": "TERMS AND CONDITIONS -- SIMPLIFIED ACQUISITIONS (NONCOMMERCIAL)",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "I",
+      "number": "52.216-1",
+      "title": "TYPE OF CONTRACT",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "I",
+      "number": "52.216-1",
+      "title": "TYPE OF CONTRACT, ALT I",
+      "date": "FEB 2026",
+      "alt": "I",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "I",
+      "number": "52.219-28",
+      "title": "POSTAWARD SMALL BUSINESS PROGRAM REREPRESENTATION",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "I",
+      "number": "52.222-36",
+      "title": "EQUAL OPPORTUNITY FOR WORKERS WITH DISABILITIES",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "I",
+      "number": "52.222-36",
+      "title": "EQUAL OPPORTUNITY FOR WORKERS WITH DISABILITIES, ALT I",
+      "date": "FEB 2026",
+      "alt": "I",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "I",
+      "number": "52.222-50",
+      "title": "COMBATING TRAFFICKING IN PERSONS",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "I",
+      "number": "52.222-54",
+      "title": "EMPLOYMENT ELIGIBILITY VERIFICATION",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "I",
+      "number": "52.223-23",
+      "title": "SUSTAINABLE PRODUCTS",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "I",
+      "number": "52.223-3",
+      "title": "HAZARDOUS MATERIAL IDENTIFICATION AND SAFETY DATA",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "I",
+      "number": "52.223-7",
+      "title": "NOTICE OF RADIOACTIVE MATERIALS",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "I",
+      "number": "52.227-1",
+      "title": "AUTHORIZATION AND CONSENT, ALT I",
+      "date": "APR 1984",
+      "alt": "I"
+    },
+    {
+      "section": "I",
+      "number": "52.227-1",
+      "title": "AUTHORIZATION AND CONSENT, ALT II",
+      "date": "APR 2026",
+      "alt": "II"
+    },
+    {
+      "section": "I",
+      "number": "52.232-39",
+      "title": "UNENFORCEABILITY OF UNAUTHORIZED OBLIGATIONS",
+      "date": "JUN 2013"
+    },
+    {
+      "section": "I",
+      "number": "52.232-40",
+      "title": "PROVIDING ACCELERATED PAYMENTS TO SMALL BUSINESS SUBCONTRACTORS",
+      "date": "MAR 2023"
+    },
+    {
+      "section": "I",
+      "number": "52.240-93",
+      "title": "BASIC SAFEGUARDING OF COVERED CONTRACTOR INFORMATION SYSTEMS",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "I",
+      "number": "52.243-1",
+      "title": "CHANGES - FIXED PRICE",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "I",
+      "number": "52.244-6",
+      "title": "SUBCONTRACTS FOR COMMERCIAL PRODUCTS AND COMMERCIAL SERVICES",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "I",
+      "number": "52.246-2",
+      "title": "INSPECTION OF SUPPLIES - FIXED PRICE",
+      "date": "AUG 1996"
+    },
+    {
+      "section": "I",
+      "number": "52.249-8",
+      "title": "DEFAULT (FIXED-PRICE SUPPLY AND SERVICE)",
+      "date": "APR 1984"
+    },
+    {
+      "section": "K",
+      "number": "252.203-7005",
+      "title": "REPRESENTATION RELATING TO COMPENSATION OF FORMER DOD OFFICIALS",
+      "date": "SEP 2022"
+    },
+    {
+      "section": "K",
+      "number": "252.204-7008",
+      "title": "COMPLIANCE WITH SAFEGUARDING COVERED DEFENSE INFORMATION CONTROLS",
+      "date": "OCT 2016"
+    },
+    {
+      "section": "K",
+      "number": "252.204-7016",
+      "title": "COVERED DEFENSE TELECOMMUNICATIONS EQUIPMENT OR SERVICES -- REPRESENTATION",
+      "date": "DEC 2019"
+    },
+    {
+      "section": "K",
+      "number": "252.204-7017",
+      "title": "PROHIBITION ON THE ACQUISITON OF COVERED DEFENSE TELECOMMUNICATIONS EQUIPMENT OR SERVICES— REPRESENTATION",
+      "date": "MAY 2021"
+    },
+    {
+      "section": "K",
+      "number": "252.239-7098",
+      "title": "PROHIBITION ON CONTRACTING TO MAINTAIN OR ESTABLISH A COMPUTER NETWORK UNLESS SUCH NETWORK IS DESIGNED TO BLOCK ACCESS TO CERTAIN WEBSITES – REPRESENTATION",
+      "date": "APR 2021",
+      "deviation": "2021-O0003"
+    },
+    {
+      "section": "K",
+      "number": "52.219-1",
+      "title": "SMALL BUSINESS PROGRAM REPRESENTATIONS",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "L",
+      "number": "252.215-7994",
+      "title": "REQUIREMENTS FOR CERTIFIED COST OR PRICING DATA AND DATA OTHER THAN CERTIFIED COST OR PRICING DATA—BASIC",
+      "date": "MAR 2026",
+      "deviation": "2026-O0048"
+    },
+    {
+      "section": "L",
+      "number": "52.204-7",
+      "title": "SYSTEM FOR AWARD MANAGEMENT -- REGISTRATION",
+      "date": "FEB 2026",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "L",
+      "number": "52.204-7",
+      "title": "SYSTEM FOR AWARD MANAGEMENT -- REGISTRATION, ALT I",
+      "date": "FEB 2026",
+      "alt": "I",
+      "deviation": "2026-O0038"
+    },
+    {
+      "section": "L",
+      "number": "52.211-14",
+      "title": "NOTICE OF PRIORITY RATING FOR NATIONAL DEFENSE, EMERGENCY PREPAREDNESS, AND ENERGY PROGRAM USE",
+      "date": "APR 2008"
+    },
+    {
+      "section": "L",
+      "number": "52.252-1",
+      "title": "SOLICITATION PROVISIONS INCORPORATED BY REFERENCE",
+      "date": "FEB 1998"
+    }
+  ]
+}

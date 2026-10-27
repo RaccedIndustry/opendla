@@ -3,6 +3,7 @@ import { Test } from '@nestjs/testing';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import request from 'supertest';
 import { App } from 'supertest/types.js';
+import { options } from '../src/data-source.js';
 import { Archive } from '../src/ingest/archive.entity.js';
 import { ArchivesController } from '../src/ingest/archives.controller.js';
 import { IngestService } from '../src/ingest/ingest.service.js';
@@ -31,12 +32,7 @@ describe('Archive actions (e2e)', () => {
     vi.clearAllMocks();
     const moduleRef = await Test.createTestingModule({
       imports: [
-        TypeOrmModule.forRoot({
-          type: 'better-sqlite3',
-          database: ':memory:',
-          entities: [Archive],
-          synchronize: true,
-        }),
+        TypeOrmModule.forRoot(options), // :memory:, migrated (vitest.config.e2e.ts)
         TypeOrmModule.forFeature([Archive]),
       ],
       controllers: [ArchivesController],
