@@ -174,10 +174,12 @@ nav a[aria-current='page'] {
 	color: var(--accent);
 }
 
-/* RFQ JSON viewer */
+/* RFQ detail */
 dialog {
-	width: min(56rem, 100% - 2rem);
+	width: min(72rem, 100% - 2rem);
 	padding: 1.25rem;
+	/* Scrolling past its end mustn't scroll the list behind it. */
+	overscroll-behavior: contain;
 	border: 1px solid var(--border);
 	border-radius: 12px;
 	background: var(--surface);

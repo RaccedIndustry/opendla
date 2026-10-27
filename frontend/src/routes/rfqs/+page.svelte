@@ -1,18 +1,14 @@
 <script lang="ts">
+	import { usd, type Rfq } from '#lib/api.ts';
 	import DataTable from '#lib/DataTable.svelte';
+	import RfqDetail from '#lib/rfq/RfqDetail.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
 	let dialog = $state<HTMLDialogElement>();
-	let detail = $state<{ number: string }>();
-	const demo = $derived(data.archives.find((a) => a.id === data.archive)?.demo);
+	let detail = $state<Rfq>();
+	const archive = $derived(data.archives.find((a) => a.id === data.archive));
 
-	// DLA unit prices run to 5 decimals.
-	const usd = new Intl.NumberFormat('en-US', {
-		style: 'currency',
-		currency: 'USD',
-		maximumFractionDigits: 5
-	});
 	// The latest award on record for the line's NSN, with what qualifies the price.
 	const rows = $derived(
 		data.lines.map((l) => ({
@@ -31,7 +27,7 @@
 		}))
 	);
 
-	/** Shows the whole RFQ: its JSON and every award on record, so each value in the list can be traced. */
+	/** Opens the whole RFQ: everything parsed from it and every award on record for its NSNs. */
 	async function show(id: number) {
 		const res = await fetch(`/api/solicitations/${id}`);
 		if (!res.ok) return alert(`Couldn't load the RFQ (${res.status})`);
@@ -40,7 +36,7 @@
 	}
 </script>
 
-<h1>RFQs {#if demo}<mark>demo</mark>{/if}</h1>
+<h1>RFQs {#if archive?.demo}<mark>demo</mark>{/if}</h1>
 
 {#if data.archives.length === 0}
 	<p>No archives yet. The daily job adds one per DIBBS post date.</p>
@@ -48,6 +44,7 @@
 	<DataTable
 		{rows}
 		searchable={false}
+		filename="rfqs-{archive?.date}"
 		columns={[
 			{ key: 'number', label: 'Solicitation' },
 			{ key: 'clin', label: 'CLIN' },
@@ -98,12 +95,9 @@
 	</DataTable>
 {/if}
 
+<!-- Keyed, so each RFQ opens on the formatted view. -->
 <dialog bind:this={dialog} aria-labelledby="rfq-title">
-	<header>
-		<h2 id="rfq-title">{detail?.number}</h2>
-		<form method="dialog"><button>Close</button></form>
-	</header>
-	<pre>{JSON.stringify(detail, null, 2)}</pre>
+	{#if detail}{#key detail}<RfqDetail rfq={detail} />{/key}{/if}
 </dialog>
 
 <style>
@@ -111,22 +105,5 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.5rem;
-	}
-	header {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		gap: 1rem;
-		margin-bottom: 0.75rem;
-	}
-	h2 {
-		margin: 0;
-		font-size: 1rem;
-	}
-	pre {
-		max-height: 70vh;
-		overflow: auto;
-		white-space: pre-wrap;
-		overflow-wrap: anywhere;
 	}
 </style>
