@@ -4,7 +4,7 @@ services:
     build: .
     init: true
     restart: unless-stopped
-    # BIND=<LAN IP> opens it to the office network; the default is this machine only.
+    # Default: this machine only. Set BIND to an internal address only if your IT policy allows other machines.
     ports: ["${BIND:-127.0.0.1}:${PORT:-3000}:3000"]
     environment: [ADMIN_PASSWORD]
     volumes: [data:/app/backend/data]
